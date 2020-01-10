@@ -1,0 +1,150 @@
+%% This is a complete thesis template which includes almost all the things required to prepare your thesis according to IITM formatting guidelines
+
+\documentclass[PhD]{iitmdiss}
+%\documentclass[PhD,PrntForm]{iitmdiss}
+%\documentclass[MS]{iitmdiss}
+%\documentclass[MTech]{iitmdiss}
+%\documentclass[DD]{iitmdiss}
+%\documentclass[MBA]{iitmdiss}
+%\documentclass[MSc]{iitmdiss}
+%\documentclass[BTech]{iitmdiss}
+\usepackage{times}
+%\usepackage{t1enc} % t1enc is obselete, replaced by fontenc
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{enumerate}
+\usepackage{bibentry}
+\usepackage{hyperref} % hyperlinks for references.
+%\usepackage[hypertex]{hyperref} % hypertex is no longer required option
+%\usepackage[hidelinks]{hyperref} %hidelinks to remove boxes around hyperlinks
+\usepackage{amsmath,amssymb,textcomp} % easier math formulae, align, subequations \ldots
+%\usepackage{newtxtext,newtxmath} % can be used for getting TNR font but might mess up your other co-existing fonts/symbols
+\usepackage{afterpage}
+\usepackage{emptypage} % To remove page numbers on blank pages
+\usepackage{authoraftertitle} %to access title and author even after maketitle using \MyTitle and \MyAuthor
+
+%% Optional packages for nomencl, lineno and TOC links for every page
+%\usepackage{nomencl,lineno}
+%\usepackage{blindtext,eso-pic,ifthen,xcolor} % For TOC link in every page
+
+\begin{document}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title page
+\include{A_title/A01_title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Quotation ans Dedication pages (both are optional)
+\include{A_title/A02_quote_ded}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Certificate
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+\include{A_title/A03_cert}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgements
+\include{B_toc/B01_ack}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+\include{B_toc/B02_abst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents etc.
+\include{B_toc/B03_toc}
+
+%% Uncomment this if your toc flows to the next page
+%\addtocontents{toc}{\protect\afterpage{\textbf{Table of Contents} (continued)\hfill\textbf{Page}\par\medskip}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%  Nomenclature  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% If you're comfortable with nomencl or glossaries packages you can automate this
+% Glossary
+\include{B_toc/B04_glos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Abbreviations
+\include{B_toc/B05_abbr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notation
+\include{B_toc/B06_notn}
+
+% Include the following line for link to toc on every page after this
+%\include{B_toc/B07_toclinks}
+
+\pagebreak
+\clearpage
+
+% The main text will follow from this point so set the page numbering
+% to arabic from here on.
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Uncomment this for having a toc link on every page starting from chapter content
+%\newboolean{linktoc}
+%\setboolean{linktoc}{true}  %%% uncomment to show answers properly
+%%\setboolean{linktoc}{false}  %%% comment to show answers properly
+%
+%%\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
+%% \put(\LenToUnit{\paperwidth},\LenToUnit{-0.3\paperheight}){#1}%
+%% }}%
+%\newcommand\AtPageLowerRight[1]{\AtPageLowerLeft{%
+%		\put(\LenToUnit{\paperwidth},\LenToUnit{0.01\paperheight}){#1}%
+%}}%
+%
+%\ifthenelse{\boolean{linktoc}}%
+%{%
+%	\AddToShipoutPictureBG{%
+%		%\AtPageUpperRight{\put(-70,0){\hyperref[toc]{Go to TOC}}}
+%		\AtPageLowerRight{\put(-70,0){\hyperref[toc]{\textcolor{gray}{Go to TOC}}}}
+%	}%
+%}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A SAMPLE CHAPTER - Introduction.
+\include{C_chap/C01_chap1}
+\include{C_chap/C02_chap2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices.
+
+\appendix
+\include{D_appx/D01_app1}
+\include{D_appx/D02_app2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography.
+
+
+\begin{singlespace}
+  \bibliography{refs}
+\end{singlespace}
+\addcontentsline{toc}{chapter}{REFERENCES}
+
+
+%%%%%%%%%%%%% The following sections are only required for research programmes: MS and PhD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% List of papers (only required for research programmes: MS and PhD)
+
+\include{E_end/E01_lop}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CV	(only required for research programmes: MS and PhD)
+%\CV
+\include{E_end/E02_cv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Doctoral or General Test Committee (only required for research programmes: MS and PhD)
+
+%\committee
+\include{E_end/E03_cmte}
+
+
+\end{document}

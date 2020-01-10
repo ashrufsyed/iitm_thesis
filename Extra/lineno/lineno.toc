@@ -1,0 +1,44 @@
+\contentsline {section}{\numberline {1}Introductions \unskip }{2}% 
+\contentsline {subsection}{\numberline {1.1}Introduction to versions $\textrm {v}\lessthan 4$ \unskip }{3}% 
+\contentsline {subsection}{\numberline {1.2}Introduction to versions v4.00ff. (UL) \unskip }{3}% 
+\contentsline {subsection}{\numberline {1.3}Availability \unskip }{5}% 
+\contentsline {subsection}{\numberline {1.4}Introductory code \unskip }{5}% 
+\contentsline {section}{\numberline {2}Put the line numbers to the lines \unskip }{6}% 
+\contentsline {subsection}{\numberline {2.1}Basic code of \texttt {lineno.sty} \texttt {\@backslashchar output} \unskip }{6}% 
+\contentsline {subsection}{\numberline {2.2}\texttt {\@backslashchar LineNoTest} \unskip }{9}% 
+\contentsline {subsection}{\numberline {2.3}Other output routines (v4.2) \unskip }{9}% 
+\contentsline {subsection}{\numberline {2.4}\texttt {\@backslashchar MakeLineNo}: Actually attach line number \unskip }{11}% 
+\contentsline {section}{\numberline {3}Control line numbering \unskip }{14}% 
+\contentsline {subsection}{\numberline {3.1}Inserting \texttt {\@backslashchar output} calls \unskip }{14}% 
+\contentsline {subsection}{\numberline {3.2}Turning on/off \unskip }{16}% 
+\contentsline {subsection}{\numberline {3.3}Display math \unskip }{18}% 
+\contentsline {section}{\numberline {4}Line number references \unskip }{20}% 
+\contentsline {subsection}{\numberline {4.1}Internals \unskip }{20}% 
+\contentsline {subsection}{\numberline {4.2}The \texttt {\@backslashchar linelabel} command \unskip }{22}% 
+\contentsline {section}{\numberline {5}The appearance of the line numbers \unskip }{24}% 
+\contentsline {subsection}{\numberline {5.1}Basic code \unskip }{24}% 
+\contentsline {subsection}{\numberline {5.2}Running line numbers \unskip }{27}% 
+\contentsline {subsection}{\numberline {5.3}Pagewise line numbers \unskip }{27}% 
+\contentsline {subsection}{\numberline {5.4}Twocolumn mode (New v3.06) \unskip }{32}% 
+\contentsline {subsection}{\numberline {5.5}Numbering modulo $m$, starting at $f$ \unskip }{33}% 
+\contentsline {section}{\numberline {6}Package options \unskip }{37}% 
+\contentsline {subsection}{\numberline {6.1}Extended referencing to line numbers. (v4.2) \unskip }{37}% 
+\contentsline {subsection}{\numberline {6.2}\texttt {\@backslashchar linelabel} in math mode \unskip }{38}% 
+\contentsline {subsection}{\numberline {6.3}Arrays, tabular environments (Revised v4.11) \unskip }{38}% 
+\contentsline {subsection}{\numberline {6.4}Switch among settings \unskip }{39}% 
+\contentsline {subsection}{\numberline {6.5}Compatibility with \texttt {hyperref} \unskip }{41}% 
+\contentsline {subsection}{\numberline {6.6}A note on calling so many options \unskip }{43}% 
+\contentsline {subsection}{\numberline {6.7}Execute options \unskip }{43}% 
+\contentsline {section}{\numberline {7}Former package extensions \unskip }{43}% 
+\contentsline {subsection}{\numberline {7.1}$display math$ \unskip }{43}% 
+\contentsline {subsection}{\numberline {7.2}Line numbers in internal vertical mode \unskip }{44}% 
+\contentsline {subsection}{\numberline {7.3}Line number references with offset \unskip }{45}% 
+\contentsline {subsection}{\numberline {7.4}Numbered quotation environments \unskip }{46}% 
+\contentsline {subsection}{\numberline {7.5}Frame around a paragraph \unskip }{47}% 
+\contentsline {section}{\numberline {8}Move \texttt {\@backslashchar vadjust} items (New v4.00) \unskip }{48}% 
+\contentsline {subsection}{\numberline {8.1}Redefining \texttt {\@backslashchar vadjust} \unskip }{48}% 
+\contentsline {subsection}{\numberline {8.2}Redefining the \LaTeX \ commands \unskip }{49}% 
+\contentsline {subsection}{\numberline {8.3}Reminder on obsoleteness \unskip }{51}% 
+\contentsline {section}{\numberline {9}The final touch \unskip }{52}% 
+\contentsline {section}{\numberline {10}The user commands \unskip }{52}% 
+\contentsline {subsection}{\numberline {10.1}Customization hooks \unskip }{55}% 

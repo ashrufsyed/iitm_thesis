@@ -1,0 +1,47 @@
+%%% This template is meant to have chapter wise document with only references
+%%% and without any clutter like title page, toc, nomenclature etc.,
+
+\documentclass[PhD]{iitmdiss}
+%\documentclass[MS]{iitmdiss}
+%\documentclass[MTech]{iitmdiss}
+%\documentclass[DD]{iitmdiss}
+%\documentclass[BTech]{iitmdiss}
+\usepackage{times}
+\usepackage{t1enc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{hyperref} % hyperlinks for references.
+%\usepackage[hypertex]{hyperref} % hypertex is no longer required option
+%\usepackage[hidelinks]{hyperref} %hidelinks to remove boxes around hyperlinks
+\usepackage{amsmath} % easier math formulae, align, subequations \ldots
+\usepackage{emptypage} % To remove page numbers on blank pages
+%\usepackage{authoraftertitle} %to access title and author even after maketitle using \MyTitle and \MyAuthor
+
+
+\begin{document}
+	
+%
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A SAMPLE CHAPTER - Introduction.
+\include{C_chap/C01_chap1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices.
+
+%\appendix
+%\include{app1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography.
+
+\begin{singlespace}
+  \bibliography{refs}
+\end{singlespace}
+
+\end{document}

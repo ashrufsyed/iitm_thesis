@@ -1,0 +1,19 @@
+%% For having a toc link on every page starting from chapter content
+\newboolean{linktoc}
+\setboolean{linktoc}{true}  %%% uncomment to show answers properly
+%\setboolean{linktoc}{false}  %%% comment to show answers properly
+
+%\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
+% \put(\LenToUnit{\paperwidth},\LenToUnit{-0.3\paperheight}){#1}%
+% }}%
+\newcommand\AtPageLowerRight[1]{\AtPageLowerLeft{%
+ \put(\LenToUnit{\paperwidth},\LenToUnit{0.3\paperheight}){#1}%
+ }}%
+
+\ifthenelse{\boolean{linktoc}}%
+{%
+\AddToShipoutPictureBG{%
+   %\AtPageUpperRight{\put(-70,0){\hyperref[toc]{Go to TOC}}}
+   \AtPageLowerRight{\put(-70,0){\hyperref[toc]{Go to TOC}}}
+    }%
+}%

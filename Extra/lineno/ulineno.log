@@ -1,0 +1,195 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.15)  1 JAN 2020 15:39
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ulineno.tex
+(./ulineno.tex
+LaTeX2e <2019-10-01> patch level 1
+File: ulineno.tex 2001/08/03 lineno.sty users manual
+(/root1/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
+(/root1/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (./lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count88
+\output=\toks14
+\linenoprevgraf=\count89
+\linenumbersep=\dimen103
+\linenumberwidth=\dimen104
+\c@linenumber=\count90
+\c@pagewiselinenumber=\count91
+\c@LN@truepage=\count92
+\c@internallinenumber=\count93
+\c@internallinenumbers=\count94
+\quotelinenumbersep=\dimen105
+\bframerule=\dimen106
+\bframesep=\dimen107
+\bframebox=\box27
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/root1/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (./ulineno.aux)
+\openout1 = `ulineno.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 44.
+ [1
+
+{/root1/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./ulineno.
+toc
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+)
+\tf@toc=\write3
+\openout3 = `ulineno.toc'.
+
+
+[1]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 52.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <17.28> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 52.
+
+Overfull \hbox (7.37912pt too wide) in paragraph at lines 97--100
+\OT1/cmtt/m/it/12 lineno.sty \OT1/cmr/m/n/12 is avail-able on the \OT1/cmr/m/it
+/12 Com-pre-hen-sive TeX Archive Net-work \OT1/cmr/m/n/12 (CTAN),
+ []
+
+
+Overfull \hbox (20.0222pt too wide) in paragraph at lines 97--100
+\OT1/cmr/m/n/12 e.g, $\OT1/cmtt/m/n/12 ftp : / / ftp . tex . ac . uk / tex-[]ar
+chive / macros / latex / contrib / supported /
+ []
+
+
+Overfull \hbox (12.44089pt too wide) in paragraph at lines 101--103
+[]\OT1/cmr/m/n/12 The home of \OT1/cmtt/m/it/12 lineno.sty \OT1/cmr/m/n/12 is $
+\OT1/cmtt/m/n/12 http : / / www . nevis . columbia . edu / []stephan /
+ []
+
+[1
+
+] [2] [3]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
+69.
+ (/root1/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 269.
+ [4]
+[5] [6] [7] [8] [9]
+Overfull \hbox (14.54956pt too wide) in paragraph at lines 540--541
+[][][]\OT1/cmtt/m/n/12 \renewcommand\linenumberfont{\normalfont\bfseries\small}
+ 
+ []
+
+
+Overfull \hbox (2.04794pt too wide) in paragraph at lines 546--550
+\OT1/cmr/m/n/12 The dis-tance on the right mar-gin is [][]\OT1/cmtt/m/n/12 \lin
+enumbersep []\OT1/cmr/m/n/12 plus [][]\OT1/cmtt/m/n/12 \linenumberwidth[]\OT1/c
+mr/m/n/12 ,
+ []
+
+
+Overfull \hbox (33.07457pt too wide) in paragraph at lines 592--596
+[] \OT1/cmtt/m/n/12 {\hss$\rightarrow$\ \rlap{\hskip\textwidth\ $\leftarrow$}} 
+
+ []
+
+[10]
+Overfull \hbox (2.19955pt too wide) in paragraph at lines 627--629
+[]  \OT1/cmtt/m/n/12 {\hss\linenumberfont\LineNumber\hskip\linenumbersep} 
+ []
+
+
+Overfull \hbox (2.19955pt too wide) in paragraph at lines 632--635
+[]  \OT1/cmtt/m/n/12 {\linenumberfont\hskip\linenumbersep\hskip\textwidth 
+ []
+
+[11]
+Overfull \hbox (5.64029pt too wide) in paragraph at lines 674--680
+[]\OT1/cmr/m/n/12 The re-stric-tions on plac-ing a [][]\OT1/cmtt/m/n/12 \linela
+bel []\OT1/cmr/m/n/12 are the same as for a [][]\OT1/cmtt/m/n/12 \marginpar[]\O
+T1/cmr/m/n/12 .
+ []
+
+[12]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 738.
+
+ [13]
+Overfull \hbox (0.85931pt too wide) in paragraph at lines 796--799
+\OT1/cmr/m/n/12 As of ver-sion 3.00 you can ac-ti-vate this by the pack-age op-
+tion [][]\OT1/cmtt/m/n/12 [displaymath][]\OT1/cmr/m/n/12 .
+ []
+
+[14] [15] [16] [17
+
+] [18] (./ulineno.aux) ) 
+Here is how much of TeX's memory you used:
+ 603 strings out of 492167
+ 7441 string characters out of 6127269
+ 73108 words of memory out of 5000000
+ 5023 multiletter control sequences out of 15000+600000
+ 12129 words of font info for 45 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 24i,7n,21p,174b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
+</root1/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bxti10.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt
+10.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></ro
+ot1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></root1/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></root1/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></root1/texlive/2019/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></root1/texlive/2019/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti12.pfb></root1/texlive/2019/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ulineno.pdf (20 pages, 171498 bytes).
+PDF statistics:
+ 117 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

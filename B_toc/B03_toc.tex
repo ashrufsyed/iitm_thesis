@@ -1,0 +1,19 @@
+% Table of contents etc.
+
+\begin{singlespace}
+
+\tableofcontents\label{toc}
+\thispagestyle{empty}
+
+\listoftables
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\addtocontents{lot}{\textbf{Table}\hfill\textbf{Title}\hfill\textbf{Page}\par}
+%\addtocontents{lot}{\protect\afterpage{\textbf{Table}\hfill\textbf{Title}\hfill\textbf{Page}\par}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\addtocontents{lof}{\textbf{Figure}\hfill\textbf{Title}\hfill\textbf{Page}\par}
+%\addtocontents{lof}{\protect\afterpage{\textbf{Figure}\hfill\textbf{Title}\hfill\textbf{Page}\par}
+
+\end{singlespace}
+

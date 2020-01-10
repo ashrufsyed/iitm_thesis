@@ -1,0 +1,279 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.15)  1 JAN 2020 15:39
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**lineno.tex
+(./lineno.tex
+LaTeX2e <2019-10-01> patch level 1
+(/root1/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
+(/root1/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (./lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count88
+\output=\toks14
+\linenoprevgraf=\count89
+\linenumbersep=\dimen103
+\linenumberwidth=\dimen104
+\c@linenumber=\count90
+\c@pagewiselinenumber=\count91
+\c@LN@truepage=\count92
+\c@internallinenumber=\count93
+\c@internallinenumbers=\count94
+\quotelinenumbersep=\dimen105
+\bframerule=\dimen106
+\bframesep=\dimen107
+\bframebox=\box27
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(./lineno.aux)
+\openout1 = `lineno.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 43.
+ (./lineno.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+ [1
+
+{/root1/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 38.
+)
+\tf@toc=\write3
+\openout3 = `lineno.toc'.
+
+ [2]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 6
+6.
+
+(/root1/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+ [3] [4] [5]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 239.
+
+Underfull \hbox (badness 5022) in paragraph at lines 256--268
+\OT1/cmr/m/n/12 (UL) Hm. It is never needed be-low that this is a counter.
+ []
+
+[6]
+Underfull \hbox (badness 1242) in paragraph at lines 314--326
+\OT1/cmr/m/n/12 ber re-sults from a box that the out-put rou-tine in-serts at t
+he
+ []
+
+[7] [8]
+Underfull \hbox (badness 2913) in paragraph at lines 461--464
+\OT1/cmr/m/n/12 I had thought of deal-ing with bad in-ter-fer-ence of foot-note
+s (and
+ []
+
+[9]
+Underfull \hbox (badness 3108) in paragraph at lines 495--501
+\OT1/cmr/m/it/12 More on deal-ing with out-put rou-tines from other pack-ages: 
+\OT1/cmr/m/n/12 Since
+ []
+
+
+Underfull \hbox (badness 2343) in paragraph at lines 505--510
+[]\OT1/cmr/m/n/12 if a class changes [][]\OT1/cmtt/m/n/12 \output []\OT1/cmr/m/
+n/12 (APS jour-nal class rev-tex4, e.g.),
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 505--510
+[][]\OT1/cmtt/m/n/12 lineno.sty []\OT1/cmr/m/n/12 should be loaded by [][]\OT1/
+cmtt/m/n/12 \RequirePackage []\OT1/cmr/m/n/12 [here pre-
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 505--510
+\OT1/cmr/m/n/12 sum-ably fol-low-ing some op-tions in brackets][][]\OT1/cmtt/m/
+n/12 {lineno} []\OT1/cmr/m/it/12 pre-ced-ing
+ []
+
+
+Underfull \hbox (badness 1852) in paragraph at lines 510--515
+[]\OT1/cmr/m/n/12 If you ac-tu-ally main-tain such a class, please con-sider lo
+ad-ing
+ []
+
+[10]
+Underfull \hbox (badness 2990) in paragraph at lines 530--534
+\OT1/cmr/m/n/12 so we in-cre-ment the line num-ber \OT1/cmr/m/it/12 af-ter \OT1
+/cmr/m/n/12 print-ing it. The macro
+ []
+
+[11] [12] [13]
+Underfull \hbox (badness 3977) in paragraph at lines 745--749
+[]\OT1/cmr/m/n/12 New (2.05beta): the pre-vgraf test. A para-graph that ends
+ []
+
+[14] [15] [16]
+Underfull \hbox (badness 1215) in paragraph at lines 893--897
+\OT1/cmr/m/n/12 (New v4.00) More-over, it is use-ful to switch to [][]\OT1/cmtt
+/m/n/12 \nolinenumbers []\OT1/cmr/m/n/12 in
+ []
+
+[17] [18] [19] [20]
+Underfull \hbox (badness 1755) in paragraph at lines 1118--1125
+[][]\OT1/cmtt/m/n/12 \@freelist []\OT1/cmr/m/n/12 boxes. [][]\OT1/cmtt/m/n/12 \
+linelabel []\OT1/cmr/m/n/12 will in-deed place a sig-nal penalty
+ []
+
+
+Underfull \hbox (badness 3098) in paragraph at lines 1131--1138
+\OT1/cmr/m/n/12 This takes an item [][]\OT1/cmtt/m/n/12 #1 []\OT1/cmr/m/n/12 fr
+om a list [][]\OT1/cmtt/m/n/12 #4 []\OT1/cmr/m/n/12 into [][]\OT1/cmtt/m/n/12 #
+3[]\OT1/cmr/m/n/12 ; to be used as
+ []
+
+[21] [22]
+Underfull \hbox (badness 1033) in paragraph at lines 1286--1290
+\OT1/cmr/m/n/12 (New v4.00) The [][]\OT1/cmtt/m/n/12 \@ignorefalse []\OT1/cmr/m
+/n/12 was ap-pro-pri-ate be-fore be-cause the
+ []
+
+[23] [24] [25]
+Underfull \hbox (badness 3229) in paragraph at lines 1432--1439
+[]\OT1/cmr/m/n/12 (New v4.22) [][]\OT1/cmtt/m/n/12 \c@linenumber []\OT1/cmr/m/n
+/12 usu-ally is---globally---incremented by
+ []
+
+
+Underfull \hbox (badness 3118) in paragraph at lines 1463--1467
+\OT1/cmr/m/n/12 Running mode is easy, [][]\OT1/cmtt/m/n/12 \LineNumber []\OT1/c
+mr/m/n/12 and [][]\OT1/cmtt/m/n/12 \theLineNumber []\OT1/cmr/m/n/12 pro-duce
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 1463--1467
+[][]\OT1/cmtt/m/n/12 \thelinenumber[]\OT1/cmr/m/n/12 , which de-faults to [][]\
+OT1/cmtt/m/n/12 \arabic{linenumber}[]\OT1/cmr/m/n/12 , us-ing the
+ []
+
+[26] [27] [28]
+Underfull \hbox (badness 1173) in paragraph at lines 1605--1609
+\OT1/cmr/m/n/12 Now, this is the tricky part. First of all, the whole def-i-ni-
+tion of
+ []
+
+[29] [30] [31] [32]
+Underfull \hbox (badness 2486) in paragraph at lines 1864--1868
+[][][]\OT1/cmtt/m/n/12 \themodulolinenumber []\OT1/cmr/m/n/12 waits for be-ing 
+de-clared [][]\OT1/cmtt/m/n/12 \LineNumber []\OT1/cmr/m/n/12 by
+ []
+
+[33] [34]
+Underfull \hbox (badness 3386) in paragraph at lines 1961--1964
+[][]\OT1/cmtt/m/n/12 \def []\OT1/cmr/m/n/12 in-stead of [][]\OT1/cmtt/m/n/12 \l
+et []\OT1/cmr/m/n/12 en-ables tak-ing ac-count of a re-def-i-ni-tion of
+ []
+
+[35] [36] [37] [38] [39] [40] [41] [42]
+Underfull \hbox (badness 5637) in paragraph at lines 2459--2463
+[]\OT1/cmr/m/n/12 (New 3.08) Wrap [][]\OT1/cmtt/m/n/12 \[ []\OT1/cmr/m/n/12 and
+ [][]\OT1/cmtt/m/n/12 \] []\OT1/cmr/m/n/12 into [][]\OT1/cmtt/m/n/12 {linenomat
+h}[]\OT1/cmr/m/n/12 , in-stead of
+ []
+
+[43] [44] [45] [46] [47]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2710.
+
+ [48] [49] [50] [51]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 2958
+.
+ [52]
+Underfull \hbox (badness 1521) in paragraph at lines 3012--3018
+\OT1/cmr/m/n/12 If $\OMS/cmsy/m/n/12 h$\OT1/cmr/m/it/12 number$\OMS/cmsy/m/n/12
+ i$ \OT1/cmr/m/n/12 is not spec-i-fied, the cur-rent value in the counter
+ []
+
+
+Underfull \hbox (badness 3108) in paragraph at lines 3019--3031
+[]\OT1/cmr/m/n/12 Like [][]\OT1/cmtt/m/n/12 \modulolinenumbers[]\OT1/cmr/m/n/12
+ , the only dif-fer-ence be-ing that the
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 3019--3031
+[][]\OT1/cmtt/m/n/12 \pagewiselinenumbers[]\OT1/cmr/m/n/12 , [][]\OT1/cmtt/m/n/
+12 \quotelinenumbers[]\OT1/cmr/m/n/12 ) is printed re-gard-
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 3019--3031
+\OT1/cmr/m/n/12 less of the modulo---yet `1' is printed only af-ter (or ...)
+ []
+
+[53] [54] [55] [56] (./lineno.aux) ) 
+Here is how much of TeX's memory you used:
+ 652 strings out of 492167
+ 7435 string characters out of 6127269
+ 74619 words of memory out of 5000000
+ 5073 multiletter control sequences out of 15000+600000
+ 12428 words of font info for 46 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 26i,11n,21p,205b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
+</root1/texlive/2019/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb></root1/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmitt10.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi12.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb></root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
+root1/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></root1/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></root1/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></root1/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></root1/texlive/2019/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></root1/texlive/2019/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti12.pfb></root1/texlive/2019/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti7.pfb></root1/texlive/2019/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb></root1/texlive/2019/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt12.pfb>
+Output written on lineno.pdf (56 pages, 311320 bytes).
+PDF statistics:
+ 250 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

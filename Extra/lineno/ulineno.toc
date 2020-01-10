@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}When to use \texttt {\itshape lineno.sty}}{1}% 
+\contentsline {section}{\numberline {2}Where to get \texttt {\itshape lineno.sty}}{1}% 
+\contentsline {section}{\numberline {3}How to use \texttt {\itshape lineno.sty}}{2}% 
+\contentsline {subsection}{\numberline {3.1}Package options}{2}% 
+\contentsline {subsection}{\numberline {3.2}How to turn on line numbering}{2}% 
+\contentsline {subsection}{\numberline {3.3}How to turn off line numbering}{3}% 
+\contentsline {section}{\numberline {4}Numbering modes}{4}% 
+\contentsline {subsection}{\numberline {4.1}\emph {Running} line numbers}{4}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Reseting or setting the line number}{5}% 
+\contentsline {subsection}{\numberline {4.2}\emph {Pagewise} line numbers}{6}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Margin switching}{6}% 
+\contentsline {subsubsection}{\numberline {4.2.2}\emph {Running} mode with margin switching}{7}% 
+\contentsline {subsubsection}{\numberline {4.2.3}Page numbers}{7}% 
+\contentsline {subsection}{\numberline {4.3}Margin selection}{7}% 
+\contentsline {subsection}{\numberline {4.4}Summary of mode selection commands}{8}% 
+\contentsline {subsection}{\numberline {4.5}Summary of margin selection commands}{8}% 
+\contentsline {subsection}{\numberline {4.6}Numbering only one in five lines}{9}% 
+\contentsline {subsection}{\numberline {4.7}How the line numbers look like}{9}% 
+\contentsline {subsubsection}{\numberline {4.7.1}Deeper customization}{10}% 
+\contentsline {section}{\numberline {5}Line number references}{12}% 
+\contentsline {section}{\numberline {6}Known incompatibilities}{13}% 
+\contentsline {subsection}{\numberline {6.1}\texttt {wrapfig.sty}}{13}% 
+\contentsline {section}{\numberline {7}Extension packages}{13}% 
+\contentsline {subsection}{\numberline {7.1}Display math, \texttt {\itshape mlineno}}{13}% 
+\contentsline {subsection}{\numberline {7.2}\texttt {\itshape rlineno}}{15}% 
+\contentsline {subsection}{\numberline {7.3}\texttt {\itshape numquote}}{16}% 
+\contentsline {subsection}{\numberline {7.4}\texttt {\itshape ilineno}}{17}% 
+\contentsline {subsection}{\numberline {7.5}\texttt {\itshape itemrule.sty}}{17}% 
+\contentsline {subsection}{\numberline {7.6}\texttt {\itshape bframe}}{17}% 
+\contentsline {section}{\numberline {8}How to print the documented source}{18}% 
