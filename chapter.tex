@@ -2,21 +2,33 @@
 %%% and without any clutter like title page, toc, nomenclature etc.,
 
 \documentclass[PhD]{iitmdiss}
+%\documentclass[PhD,PrntForm]{iitmdiss}
 %\documentclass[MS]{iitmdiss}
 %\documentclass[MTech]{iitmdiss}
 %\documentclass[DD]{iitmdiss}
+%\documentclass[MBA]{iitmdiss}
+%\documentclass[MSc]{iitmdiss}
 %\documentclass[BTech]{iitmdiss}
 \usepackage{times}
-\usepackage{t1enc}
+%\usepackage{t1enc} % t1enc is obselete, replaced by fontenc
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{epstopdf}
+\usepackage{enumerate}
+\usepackage{bibentry}
 \usepackage{hyperref} % hyperlinks for references.
 %\usepackage[hypertex]{hyperref} % hypertex is no longer required option
 %\usepackage[hidelinks]{hyperref} %hidelinks to remove boxes around hyperlinks
-\usepackage{amsmath} % easier math formulae, align, subequations \ldots
+\usepackage{amsmath,amssymb,textcomp} % easier math formulae, align, subequations \ldots
+%\usepackage{newtxtext,newtxmath} % can be used for getting TNR font but might mess up your other co-existing fonts/symbols
+\usepackage{afterpage}
 \usepackage{emptypage} % To remove page numbers on blank pages
-%\usepackage{authoraftertitle} %to access title and author even after maketitle using \MyTitle and \MyAuthor
+\usepackage{authoraftertitle} %to access title and author even after maketitle using \MyTitle and \MyAuthor
+
+%% Optional packages for nomencl, lineno and TOC links for every page
+%\usepackage{nomencl,lineno}
+%\usepackage{blindtext,eso-pic,ifthen,xcolor} % For TOC link in every page
 
 
 \begin{document}
@@ -26,6 +38,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set page and chapter counters to custom values
+\setcounter{page}{5}		% This starts the page number with 5
+\setcounter{chapter}{1} 	% This starts chapter number as 2
+
 % A SAMPLE CHAPTER - Introduction.
 \include{C_chap/C01_chap1}
 
