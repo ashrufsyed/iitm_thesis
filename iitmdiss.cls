@@ -270,9 +270,9 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
 
   \vspace*{0.8in}
   %\centerline{\psfig{figure=emblem.ps}}
-%  \centerline{\includegraphics{iitm.eps}}
+%  \centerline{\includegraphics{iitmlogo.eps}}
 %  \centerline{\includegraphics[scale=1.]{iitm}}
-  \centerline{\includegraphics[width=3.8cm]{iitm.eps}}
+  \centerline{\includegraphics[width=3.8cm]{iitmlogo.eps}}
   \vspace*{-0.15in}
   \begin{center}
     {\bf \large DEPARTMENT OF \@department\par}

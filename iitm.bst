@@ -915,11 +915,12 @@ FUNCTION {format.org.or.pub}
           if$
         }
       if$
-      year duplicate$ empty$
-        { "empty year in " cite$ * warning$
-           pop$ "" }
-        { "year" bibinfo.check extra.label * }
-      if$
+	%% These lines are commented to remove year at the end in bib-refs
+      %year duplicate$ empty$
+      %  { "empty year in " cite$ * warning$
+      %     pop$ "" }
+      %  { "year" bibinfo.check extra.label * }
+      %if$
       t empty$ address empty$ and
         { * }
         { ", " swap$ * * }
@@ -932,6 +933,38 @@ FUNCTION {format.publisher.address}
 FUNCTION {format.organization.address}
 { organization "organization" bibinfo.check format.org.or.pub
 }
+
+FUNCTION {format.orgold.or.pubold}
+{ 't :=
+  ""
+      t empty$
+        { address "address" bibinfo.check *
+        }
+        { t *
+          address empty$
+            'skip$
+            { ", " * address "address" bibinfo.check * }
+          if$
+        }
+      if$
+      year duplicate$ empty$
+        { "empty year in " cite$ * warning$
+           pop$ "" }
+        { "year" bibinfo.check extra.label * }
+      if$
+      t empty$ address empty$ and
+        { * }
+        { ", " swap$ * * }
+      if$
+}
+FUNCTION {format.publisherold.address}
+{ publisher "publisher" bibinfo.warn format.orgold.or.pubold
+}
+
+FUNCTION {format.organizationold.address}
+{ organization "organization" bibinfo.check format.orgold.or.pubold
+}
+
 
 FUNCTION {article}
 { output.bibitem
@@ -960,6 +993,14 @@ FUNCTION {article}
   format.note output
   fin.entry
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Added the 'year in paretheses' format like APA/CMS
+%%% Older format with the year at the end renamed with suffix 'old'
+%%% Also following changes were saved in older classes
+%%%	format.org.or.pub	-> format.orgold.or.pubold
+%%%	format.publisher.address -> format.publisherold.address
+%%%	format.organization.address -> format.organizationold.address
 FUNCTION {book}
 { output.bibitem
   author empty$
@@ -973,6 +1014,8 @@ FUNCTION {book}
       if$
     }
   if$
+  format.date "year" output.check
+  date.block
   format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
@@ -994,6 +1037,43 @@ FUNCTION {book}
   format.note output
   fin.entry
 }
+
+FUNCTION {bookold}
+{ output.bibitem
+  author empty$
+    { format.editors "author and editor" output.check
+      editor format.key output
+    }
+    { format.authors output.nonnull
+      crossref missing$
+        { "author and editor" editor either.or.check }
+        'skip$
+      if$
+    }
+  if$
+  format.btitle "title" output.check
+  crossref missing$
+    { format.bvolume output
+      new.block
+      format.number.series output
+      new.sentence
+      format.publisherold.address output
+    }
+    {
+      new.block
+      format.book.crossref output.nonnull
+    }
+  if$
+  format.edition output
+  format.isbn output
+  new.block
+  format.url output
+  new.block
+  format.note output
+  fin.entry
+}
+
+
 FUNCTION {booklet}
 { output.bibitem
   format.authors output
@@ -1025,6 +1105,8 @@ FUNCTION {inbook}
       if$
     }
   if$
+  format.date "year" output.check
+  date.block
   format.btitle "title" output.check
   crossref missing$
     {
@@ -1054,10 +1136,54 @@ FUNCTION {inbook}
   fin.entry
 }
 
+FUNCTION {inbookold}
+{ output.bibitem
+  author empty$
+    { format.editors "author and editor" output.check
+      editor format.key output
+    }
+    { format.authors output.nonnull
+      crossref missing$
+        { "author and editor" editor either.or.check }
+        'skip$
+      if$
+    }
+  if$
+  format.btitle "title" output.check
+  crossref missing$
+    {
+      format.bvolume output
+      format.chapter.pages "chapter and pages" output.check
+      new.block
+      format.number.series output
+      new.sentence
+      format.publisherold.address output
+    }
+    {
+      format.chapter.pages "chapter and pages" output.check
+      new.block
+      format.book.crossref output.nonnull
+    }
+  if$
+  format.edition output
+  crossref missing$
+    { format.isbn output }
+    'skip$
+  if$
+  format.pages "pages" output.check
+  new.block
+  format.url output
+  new.block
+  format.note output
+  fin.entry
+}
+
 FUNCTION {incollection}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
+  format.date "year" output.check
+  date.block
   format.title "title" output.check
   new.block
   crossref missing$
@@ -1081,10 +1207,41 @@ FUNCTION {incollection}
   format.note output
   fin.entry
 }
+
+FUNCTION {incollectionold}
+{ output.bibitem
+  format.authors "author" output.check
+  author format.key output
+  format.title "title" output.check
+  new.block
+  crossref missing$
+    { format.in.ed.booktitle "booktitle" output.check
+      format.bvolume output
+      format.number.series output
+      format.chapter.pages output
+      new.sentence
+      format.publisherold.address output
+      format.edition output
+      format.isbn output
+    }
+    { format.incoll.inproc.crossref output.nonnull
+      format.chapter.pages output
+    }
+  if$
+  format.pages "pages" output.check
+  new.block
+  format.url output
+  new.block
+  format.note output
+  fin.entry
+}
+
 FUNCTION {inproceedings}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
+  format.date "year" output.check
+  date.block
   format.title "title" output.check
   new.block
   crossref missing$
@@ -1112,6 +1269,41 @@ FUNCTION {inproceedings}
   fin.entry
 }
 FUNCTION {conference} { inproceedings }
+
+FUNCTION {inproceedingsold}
+{ output.bibitem
+  format.authors "author" output.check
+  author format.key output
+  format.title "title" output.check
+  new.block
+  crossref missing$
+    { format.in.ed.booktitle "booktitle" output.check
+      format.bvolume output
+      format.number.series output
+      new.sentence
+      publisher empty$
+        { format.organizationold.address output }
+        { organization "organization" bibinfo.check output
+          format.publisherold.address output
+        }
+      if$
+      format.isbn output
+      format.issn output
+    }
+    { format.incoll.inproc.crossref output.nonnull
+      format.pages output
+    }
+  if$
+  new.block
+  format.url output
+  new.block
+  format.note output
+  fin.entry
+}
+FUNCTION {conferenceold} { inproceedingsold }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 FUNCTION {manual}
 { output.bibitem
   format.authors output
