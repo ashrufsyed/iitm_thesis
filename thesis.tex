@@ -25,6 +25,36 @@
 \usepackage{emptypage} % To remove page numbers on blank pages
 \usepackage{authoraftertitle} %to access title and author even after maketitle using \MyTitle and \MyAuthor
 
+\usepackage{titletoc}
+
+%%% The following lines add Chapter or Appendix in front of the number
+\titlecontents{chapter}%
+[0pt]% <left>
+{\vspace{4pt}}% <above-code>
+{\bfseries\chapappname\ \thecontentslabel:\quad}% <numbered-entry-format>
+{\bfseries}% <numberless-entry-format>
+{\bfseries\mdseries\titlerule*[0.75em]{.}\contentspage}% <filler-page-format>
+%{\hfill\contentspage}% <filler-page-format> %empty space option here
+[\addvspace{2pt}]% <vertical-space-after-chaptername>
+%%% Initially, for the main part of the document, set the label to "Chapter"
+\let\chapappname\chaptername
+
+%%%Alt-code if the above code fails - required packages: appendix, titletoc
+% \usepackage{titletoc,appendix}
+% \makeatletter
+% \titlecontents{chapter}% <section-type>
+% [0pt]% <left>
+% {\bfseries}% <above-code>
+% {\@chapapp\ \thecontentslabel:\quad}% <numbered-entry-format>
+% {}% <numberless-entry-format>
+% {\mdseries\titlerule*[0.75em]{.}\contentspage}% <filler-page-format> %{\hfill\contentspage}
+% [\addvspace{10pt}]% 
+% 
+% \g@addto@macro\appendices{%
+% 	\addtocontents{toc}{\protect\renewcommand{\protect\@chapapp}{\appendixname}}%
+% }
+% \makeatother
+
 %% Optional packages for nomencl, lineno and TOC links for every page
 %\usepackage{nomencl,lineno}
 %\usepackage{blindtext,eso-pic,ifthen,xcolor} % For TOC link in every page
@@ -115,13 +145,21 @@
 % Appendices.
 
 \appendix
-\include{D_appx/D01_app1}
-\include{D_appx/D02_app2}
+%%% Sets the label in the table of contents to "Appendix"
+\addtocontents{toc}{\string\let\string\chapappname\string\appendixname}
+%%% The appendices have to be included with `\input`, not `\include`
+%%% due to a bug in LaTeX, otherwise the appendices will also be
+%%% labeled "Chapter"
+%%% Right way: \input{appendix-a/appendix-a}
+%%% Obsolete way: \include{appendix-a/appendix-a}
+\input{D_appx/D01_app1}
+\input{D_appx/D02_app2}
+%\include{D_appx/D01_app1}
+%\include{D_appx/D02_app2}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography.
-
 
 \begin{singlespace}
   \bibliography{refs}
