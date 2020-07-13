@@ -1406,7 +1406,7 @@ FUNCTION {techreport}
   author format.key output
   format.date "year" output.check
   date.block
-  format.title
+  format.btitle
   "title" output.check
   new.block
   format.tr.number output.nonnull
