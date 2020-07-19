@@ -427,6 +427,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
    \renewcommand\bibname{\centering REFERENCES}
 
    \renewcommand\appendixname{APPENDIX}
+   \renewcommand{\fnum@figure}{Fig. \thefigure}
 \fi
 
 
