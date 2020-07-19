@@ -939,10 +939,10 @@ FUNCTION {format.org.or.pub}
       %     pop$ "" }
       %  { "year" bibinfo.check extra.label * }
       %if$
-      t empty$ address empty$ and
-        { * }
-        { ", " swap$ * * }
-      if$
+      %t empty$ address empty$ and
+      %  { * }
+      %  { ", " swap$ * * }
+      %if$
 }
 FUNCTION {format.publisher.address}
 { publisher "publisher" bibinfo.warn format.org.or.pub
