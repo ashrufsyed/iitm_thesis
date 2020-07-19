@@ -258,11 +258,17 @@ FUNCTION {bbl.chapter}
 FUNCTION {bbl.techrep}
 { "Technical Report" }
 
+FUNCTION {bbl.report}
+{ "Report" }
+
 FUNCTION {bbl.mthesis}
 { "Master's thesis" }
 
+FUNCTION {bbl.bthesis}
+{ "Bachelor's thesis" }
+
 FUNCTION {bbl.phdthesis}
-{ "Ph.D. thesis" }
+{ "Doctoral thesis" }
 
 MACRO {jan} {"January"}
 
@@ -880,6 +886,18 @@ FUNCTION {format.tr.number}
     { tie.or.space.prefix * * }
   if$
 }
+FUNCTION {format.rep.number}
+{ number "number" bibinfo.check
+  type duplicate$ empty$
+    { pop$ bbl.report }
+    'skip$
+  if$
+  "type" bibinfo.check
+  swap$ duplicate$ empty$
+    { pop$ "t" change.case$ }
+    { tie.or.space.prefix * * }
+  if$
+}
 FUNCTION {format.article.crossref}
 {
   word.in
@@ -1322,6 +1340,25 @@ FUNCTION {manual}
   fin.entry
 }
 
+FUNCTION {bachelorsthesis}
+{ output.bibitem
+  format.authors "author" output.check
+  author format.key output
+  format.date "year" output.check
+  date.block
+  format.btitle
+  "title" output.check
+  new.block
+  bbl.bthesis format.thesis.type output.nonnull
+  school "school" bibinfo.warn output
+  address "address" bibinfo.check output
+  new.block
+  format.url output
+  new.block
+  format.note output
+  fin.entry
+}
+
 FUNCTION {mastersthesis}
 { output.bibitem
   format.authors "author" output.check
@@ -1410,6 +1447,25 @@ FUNCTION {techreport}
   "title" output.check
   new.block
   format.tr.number output.nonnull
+  institution "institution" bibinfo.warn output
+  address "address" bibinfo.check output
+  new.block
+  format.url output
+  new.block
+  format.note output
+  fin.entry
+}
+
+FUNCTION {report}
+{ output.bibitem
+  format.authors "author" output.check
+  author format.key output
+  format.date "year" output.check
+  date.block
+  format.btitle
+  "title" output.check
+  new.block
+  format.rep.number output.nonnull
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
   new.block

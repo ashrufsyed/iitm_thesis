@@ -240,6 +240,11 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
        		\vskip 5ex%
        		{\bf \large \MakeUppercase{Dual Degree}} \par
        		(B.Tech. and M.Tech.) \par
+		% Uncomment below lines for specialization
+                \vskip 1ex%
+                {\normalsize \em with specialization in \par}
+		\vskip 1ex%
+		{\bf \normalsize \MakeUppercase{Applied Mechanics with Biomedical Engineeering}\par\par}
        	\else
            {\em A Project Report }\par
            \vskip 5ex%
@@ -272,7 +277,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
   %\centerline{\psfig{figure=emblem.ps}}
 %  \centerline{\includegraphics{iitmlogo.eps}}
 %  \centerline{\includegraphics[scale=1.]{iitm}}
-  \centerline{\includegraphics[width=3.8cm]{iitmlogo.eps}}
+  \centerline{\includegraphics[width=3.8cm]{iitmlogo}}
   \vspace*{-0.15in}
   \begin{center}
     {\bf \large DEPARTMENT OF \@department\par}
@@ -427,6 +432,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
    \renewcommand\bibname{\centering REFERENCES}
 
    \renewcommand\appendixname{APPENDIX}
+   \renewcommand{\fnum@figure}{Fig. \thefigure}
 \fi
 
 
