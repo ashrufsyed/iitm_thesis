@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,nat,nm-rev1,jnrlst,nmft,nmft-bf,nmfted,nmand-rm,xlab-it,keyxyr,blkyear,dt-beg,yr-par,note-yr,vol-bf,volp-com,pp-last,num-xser,pub-date,pub-xpar,isbn,issn,edpar,in-it,ppx,ed,xedn,etal-it,url,url-blk')
+%% merlin.mbs  (with options: `ay,nat,nm-rev1,jnrlst,nmft,nmft-bf,nmfted,nmand-rm,xlab-it,keyxyr,blkyear,dt-beg,yr-par,note-yr,vol-bf,volp-com,pp-last,num-xser,pub-date,pub-xpar,doi,arxiv,isbn,issn,edpar,in-it,ppx,ed,xedn,etal-it,url,url-blk')
 %% ----------------------------------------
 %% *** IIT-Madras Bibliography Style ***
 %% 
@@ -60,6 +60,8 @@ ENTRY
     editor
     howpublished
     institution
+    doi
+    arxiv
     isbn
     issn
     journal
@@ -75,6 +77,7 @@ ENTRY
     title
     type
     url
+    file
     volume
     year
   }
@@ -371,9 +374,19 @@ FUNCTION {bibinfo.warn}
   if$
 }
 FUNCTION {format.url}
-{ url empty$
+{ doi empty$
+    {
+    arxiv empty$
+      {
+      url empty$
+        { "" }
+        { "\urlprefix\url{" url * "}" * }
+      if$
+      }
+      { "" }
+    if$
+    }
     { "" }
-    { "\urlprefix\url{" url * "}" * }
   if$
 }
 
@@ -523,6 +536,77 @@ FUNCTION {format.issn}
     }
   if$
 }
+
+%% New doi,arxiv functions with hyperlinks embedded
+FUNCTION {format.doi}
+{ doi empty$
+    { "" }
+    {"\href{https://doi.org/" doi *  "}" *
+             "{\tt doi:" * doi *  "}" *}
+  if$
+}
+
+FUNCTION {format.arxiv}
+{ arxiv empty$
+    { "" }
+    {"\href{https://www.arxiv.org/abs/" arxiv *  "}" * 
+             "{\tt arXiv:" * arxiv *  "}" *}
+  if$
+}
+
+%%% doilink, arxivlink in case you need to place them in vol number or somewhere else
+% FUNCTION {doilink}
+% { duplicate$ empty$
+% { pop$ "" }
+% { doi empty$
+%     { skip$ }
+%     { "\href{http://dx.doi.org/" doi * "}{" * swap$ * "}" * }
+%   if$
+% }
+% if$
+% }
+%
+% FUNCTION {arxivlink}
+% { duplicate$ empty$
+% { pop$ "" }
+% { arxiv empty$
+%     { skip$ }
+%     { "\href{https://arxiv.org/abs/" arxiv * "}{" * swap$ * "}" * }
+%   if$
+% }
+% if$
+% }
+%
+%
+%%% Older doi, arxiv functions without hyperlinks 
+% FUNCTION {format.doi}
+% { doi "doi" bibinfo.check
+%   duplicate$ empty$ 'skip$
+%     {
+%       new.block
+%       "DOI:{" swap$ * "}" *
+%     }
+%   if$
+% }
+%
+% FUNCTION {format.arxiv}
+% { arxiv "arxiv" bibinfo.check
+%   duplicate$ empty$ 'skip$
+%     {
+%       new.block
+%       "ArXiv:{" swap$ * "}" *
+%     }
+%   if$
+% }
+
+%%% A future suggestion to add local file link to the citation number
+% FUNCTION {format.file}
+% { file empty$
+%     { "" }
+%     {"\href{run:d" file *  "}" *
+%              "{" * bbl.number *  "}" *}
+%   if$
+% }
 
 FUNCTION {format.note}
 {
@@ -1005,6 +1089,8 @@ FUNCTION {article}
   if$
   format.journal.pages
   format.issn output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1049,6 +1135,8 @@ FUNCTION {book}
   if$
   format.edition output
   format.isbn output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1084,6 +1172,8 @@ FUNCTION {bookold}
   if$
   format.edition output
   format.isbn output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1103,6 +1193,8 @@ FUNCTION {booklet}
   howpublished "howpublished" bibinfo.check output
   address "address" bibinfo.check output
   format.isbn output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1147,6 +1239,8 @@ FUNCTION {inbook}
     'skip$
   if$
   format.pages "pages" output.check
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1189,6 +1283,8 @@ FUNCTION {inbookold}
     'skip$
   if$
   format.pages "pages" output.check
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1219,6 +1315,8 @@ FUNCTION {incollection}
     }
   if$
   format.pages "pages" output.check
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1247,6 +1345,8 @@ FUNCTION {incollectionold}
     }
   if$
   format.pages "pages" output.check
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1312,6 +1412,8 @@ FUNCTION {inproceedingsold}
       format.pages output
     }
   if$
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1333,6 +1435,8 @@ FUNCTION {manual}
   organization "organization" bibinfo.check output
   address "address" bibinfo.check output
   format.edition output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1352,6 +1456,8 @@ FUNCTION {bachelorsthesis}
   bbl.bthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1371,6 +1477,8 @@ FUNCTION {mastersthesis}
   bbl.mthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1387,6 +1495,8 @@ FUNCTION {misc}
   format.title output
   new.block
   howpublished "howpublished" bibinfo.check output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1405,6 +1515,8 @@ FUNCTION {phdthesis}
   bbl.phdthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1430,6 +1542,8 @@ FUNCTION {proceedings}
   if$
   format.isbn output
   format.issn output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1449,6 +1563,8 @@ FUNCTION {techreport}
   format.tr.number output.nonnull
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1468,6 +1584,8 @@ FUNCTION {report}
   format.rep.number output.nonnull
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
@@ -1482,6 +1600,8 @@ FUNCTION {unpublished}
   format.date "year" output.check
   date.block
   format.title "title" output.check
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block
