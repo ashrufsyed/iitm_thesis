@@ -1380,6 +1380,8 @@ FUNCTION {inproceedings}
       format.pages output
     }
   if$
+  format.doi output
+  format.arxiv output
   new.block
   format.url output
   new.block

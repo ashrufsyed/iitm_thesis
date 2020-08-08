@@ -1,16 +1,18 @@
 %%% This template is meant for writing synopsis with IITM guidelines
-
 \documentclass[PhD,synopsis]{iitmdiss}
-\usepackage{times}
-%\usepackage{t1enc} % t1enc is obselete, replaced by fontenc
-\usepackage[T1]{fontenc}
-%\usepackage[dvips]{graphicx}
-\usepackage{hyperref} % hyperlinks for references.
-%\usepackage[hypertex]{hyperref} % hypertex is no longer required option
-%\usepackage[hidelinks]{hyperref} %hidelinks to remove boxes around hyperlinks
-\usepackage{amsmath,amssymb,textcomp} % easier math formulae, align, subequations \ldots
-\usepackage{graphicx}
-\usepackage{epstopdf}
+
+\input{0_settings/01_packages}
+\input{0_settings/02_commands}
+% \usepackage{times}
+% %\usepackage{t1enc} % t1enc is obselete, replaced by fontenc
+% \usepackage[T1]{fontenc}
+% %\usepackage[dvips]{graphicx}
+% \usepackage{hyperref} % hyperlinks for references.
+% %\usepackage[hypertex]{hyperref} % hypertex is no longer required option
+% %\usepackage[hidelinks]{hyperref} %hidelinks to remove boxes around hyperlinks
+% \usepackage{amsmath,amssymb,textcomp} % easier math formulae, align, subequations \ldots
+% \usepackage{graphicx}
+% \usepackage{epstopdf}
 
 \title{TITLE OF THESIS}
 
@@ -19,12 +21,9 @@
 \date{JAN 2020}
 \department{AEROSPACE ENGINEERING}
 
-
 \begin{document}
-
 %\nocite{*}
 \maketitle
-
 
 % The main text will follow from this point so set the page numbering
 % to arabic from here on.
@@ -41,7 +40,6 @@ Some sample text with a reference
 
 \section{Conclusions}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography.
 
@@ -57,10 +55,7 @@ Some sample text with a reference
 
 \end{singlespace}
 
-
-
 %%%%%%
-
 \section{Proposed Contents of the Thesis}
 The outline of the thesis is as follows:
 \begin{enumerate}
@@ -84,7 +79,6 @@ The outline of the thesis is as follows:
 \begin{enumerate}
 \item  Presented titled  {\em Title} at the {\bf Conference on...}  place, date..
 \end{enumerate}
-
 
 \end{document}
 
