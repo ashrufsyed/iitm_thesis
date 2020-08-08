@@ -1,4 +1,4 @@
-# A LaTeX template for IITM thesis/synopsis - 2019
+# A New and Improved LaTeX template for IITM thesis/synopsis - 2020
 
 - This is a LaTeX2e system with a `iitmdiss.cls` file and various templates 
 (thesis.tex, `synopsis.tex` and `chapter.tex`) that should format a report as per the [IITM Thesis](FormattingGuidelines/thesis_format.pdf)/[Synopsis](FormattingGuidelines/synopsis_format) guidelines.  
@@ -54,10 +54,10 @@ Doctoral Student
 Department of Aerospace Engineering  
 IIT Madras, Chennai 600036, India  
 <ashrufsyed@smail.iitm.ac.in> || <ashrufsyed@gmail.com>  
-Copyright (C) 2019 Ashruf Syed
+Copyright (C) 2019-2020 Ashruf Syed
 
 
-## New Features added in 2019 version:
+## New Features added in 2020 version:
 - removed obsolete options (t1enc, compat2, hypertex) and to work with Tex 2019
 - added Dual Degree option for project report 
        	(can be edited to use it for any course based degree like M.Sc., M.A., M.B.A)
@@ -72,6 +72,8 @@ Copyright (C) 2019 Ashruf Syed
 - corrected and added the necessary headings for *List of Publications* chapter at the end
 - added the sample CV and Committee pages at the end
 - added opensource licensing to the file for unambiguity in free usage and distribution
+- moved packages, commands, preamble and postamble of the thesis to 0_settings folder for simpler look
+- fixed various bugs in iitm.bst and added doi/arxiv link support for references
 
 
 ## Licensing
