@@ -1,4 +1,4 @@
-%%%%%%%%%%%% A LaTeX template for IITM thesis/synopsis - 2019 %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% A New and Improved LaTeX template for IITM thesis/synopsis - 2020 %%%%%%%%%%%%%%%%%
 %
 % This is a class for LaTeX2e that should format a report as per
 % the IITM Thesis guidelines.  The page layout is set using the
@@ -55,7 +55,7 @@
 %% 	Department of Aerospace Engineering
 %% 	IIT Madras, Chennai 600036, India
 %%	<ashrufsyed@smail.iitm.ac.in>  <ashrufsyed@gmail.com>
-%% 	Copyright (C) 2019 Ashruf Syed
+%% 	Copyright (C) 2019-2020 Ashruf Syed
 
 
 % New Features :
@@ -75,7 +75,8 @@
 %	- added the sample CV and Committee pages at the end
 %
 % 	- added opensource licensing to the file for unambiguity in free usage and distribution
-
+%   - moved packages, commands, preamble and postamble of the thesis to 0_settings folder for simpler look
+%   - fixed various bugs in iitm.bst and added doi/arxiv link support for references
 
 %%%%%%%%%%%%%%%%%%%%     Licensing	  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License. 
