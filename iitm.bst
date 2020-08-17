@@ -1222,6 +1222,7 @@ FUNCTION {inbook}
     {
       format.bvolume output
       format.chapter.pages "chapter and pages" output.check
+      format.pages "pages" output.check
       new.block
       format.number.series output
       new.sentence
@@ -1229,6 +1230,7 @@ FUNCTION {inbook}
     }
     {
       format.chapter.pages "chapter and pages" output.check
+      format.pages "pages" output.check
       new.block
       format.book.crossref output.nonnull
     }
@@ -1238,7 +1240,8 @@ FUNCTION {inbook}
     { format.isbn output }
     'skip$
   if$
-  format.pages "pages" output.check
+  %%format.pages "pages" output.check
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1305,6 +1308,7 @@ FUNCTION {incollection}
       format.bvolume output
       format.number.series output
       format.chapter.pages output
+      format.pages "pages" output.check
       new.sentence
       format.publisher.address output
       format.edition output
@@ -1312,9 +1316,11 @@ FUNCTION {incollection}
     }
     { format.incoll.inproc.crossref output.nonnull
       format.chapter.pages output
+      format.pages "pages" output.check
     }
   if$
-  format.pages "pages" output.check
+  %%format.pages "pages" output.check
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1437,6 +1443,7 @@ FUNCTION {manual}
   organization "organization" bibinfo.check output
   address "address" bibinfo.check output
   format.edition output
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1458,6 +1465,7 @@ FUNCTION {bachelorsthesis}
   bbl.bthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1479,6 +1487,7 @@ FUNCTION {mastersthesis}
   bbl.mthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1497,6 +1506,7 @@ FUNCTION {misc}
   format.title output
   new.block
   howpublished "howpublished" bibinfo.check output
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1517,6 +1527,7 @@ FUNCTION {phdthesis}
   bbl.phdthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1565,6 +1576,7 @@ FUNCTION {techreport}
   format.tr.number output.nonnull
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1586,6 +1598,7 @@ FUNCTION {report}
   format.rep.number output.nonnull
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
+  new.block
   format.doi output
   format.arxiv output
   new.block
@@ -1602,6 +1615,7 @@ FUNCTION {unpublished}
   format.date "year" output.check
   date.block
   format.title "title" output.check
+  new.block
   format.doi output
   format.arxiv output
   new.block
