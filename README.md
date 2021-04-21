@@ -1,11 +1,14 @@
-# A New and Improved LaTeX template for IITM thesis/synopsis - 2020
+# A New and Improved LaTeX template for IITM thesis/synopsis - 2021
 
+- Modified the templates and files in complaint with [Feb-2021 Formatting guidelines of IIT Madras](FormatsGuidelinesProformas/RevisedFormatsGuidelines_ThesisSynopsis.pdf).
 - This is a LaTeX2e system with a `iitmdiss.cls` file and various templates 
-(thesis.tex, `synopsis.tex` and `chapter.tex`) that should format a report as per the [IITM Thesis](FormattingGuidelines/thesis_format.pdf)/[Synopsis](FormattingGuidelines/synopsis_format) guidelines.  
+([thesis.tex](thesis.tex), [`synopsis.tex`](synopsis.tex) and [`chapter.tex`](chapter.tex)) that should format a report as per these guidelines.  
 - The page layout is set using the `geometry` package.  
 - The double/singlespacing is setup using `setspace`.
 - Figure captions are set using the `hang` option of `caption2`.  
 - `natbib` is used to do the citation using an author-year format. I've made an `iitm.bst` file that formats the references as per the IITM guidelines.
+- Additional proformas required during preparation and submission are given in a combined word file named ['ProformasCertificates_New.docx'](FormatsGuidelinesProformas/ProformasCertificates_New.docx)
+- Previous guidelines, forms, templates and files are archived into [oldGuidelines folder](FormatsGuidelinesProformas/oldGuidelines)
 
 To use this class do the following:
 
@@ -22,10 +25,12 @@ To use this class do the following:
 
   - Adding `synopsis` as option -- Generates the title page for the synopsis.  This also
   loads the `article` class instead of the `report`.
+  
+  - Adding 'BlueTape' or 'YellowTape' as option for synopis draft and approved reports
  
-#### Example:
+#### Examples:
 ```
-\documentclass[PhD,synopsis]{iitmdiss}
+\documentclass[PhD,synopsis,BlueTape]{iitmdiss}
 \documentclass[PhD,PrntForm]{iitmdiss}
 \documentclass[MS]{iitmdiss}
 ```
@@ -54,8 +59,10 @@ Doctoral Student
 Department of Aerospace Engineering  
 IIT Madras, Chennai 600036, India  
 <ashrufsyed@smail.iitm.ac.in> || <ashrufsyed@gmail.com>  
-Copyright (C) 2019-2020 Ashruf Syed
+Copyright (C) 2019-2021 Ashruf Syed
 
+## New Features added in 2021 version:
+- compliance with the new format and guidelines of Feb 2021
 
 ## New Features added in 2020 version:
 - removed obsolete options (t1enc, compat2, hypertex) and to work with Tex 2019
@@ -79,6 +86,8 @@ Copyright (C) 2019-2020 Ashruf Syed
 ## Licensing
  This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License. 
  To view a copy of this license, visit: https://creativecommons.org/licenses/by-nc/4.0/
+ 
+ Also the templates and files are provided “as is”, and there is no guarantee of any kind.
 
 
 Ashruf Syed <ashrufsyed@gmail.com>
