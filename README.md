@@ -26,7 +26,7 @@ To use this class do the following:
   - Adding `synopsis` as option -- Generates the title page for the synopsis.  This also
   loads the `article` class instead of the `report`.
   
-  - Adding 'BlueTape' or 'YellowTape' as option for synopis draft and approved reports
+  - Adding `BlueTape` or `YellowTape` as option for synopis draft and approved reports
  
 #### Examples:
 ```
