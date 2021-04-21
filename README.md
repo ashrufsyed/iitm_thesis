@@ -2,7 +2,7 @@
 
 - Modified the templates and files in complaint with [Feb-2021 Formatting guidelines of IIT Madras](FormatsGuidelinesProformas/RevisedFormatsGuidelines_ThesisSynopsis.pdf).
 - This is a LaTeX2e system with a `iitmdiss.cls` file and various templates 
-([thesis.tex](thesis.tex), [`synopsis.tex`](synopsis.tex) and [`chapter.tex`](chapter.tex)) that should format a report as per these guidelines.  
+([`thesis.tex`](thesis.tex), [`synopsis.tex`](synopsis.tex) and [`chapter.tex`](chapter.tex)) that should format a report as per these guidelines.  
 - The page layout is set using the `geometry` package.  
 - The double/singlespacing is setup using `setspace`.
 - Figure captions are set using the `hang` option of `caption2`.  
