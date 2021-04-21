@@ -1,13 +1,20 @@
 % Title page
 % The title and author mentioned here will also be used in preparing the thesis certificate in the later page
 
-\title{A NEW AND IMPROVED \LaTeX\ CLASS FOR DISSERTATIONS SUBMITTED TO IITM}
+\title{A New and Improved \LaTeX\ Class for Dissertations Submitted to IIT Madras}
+%% Older capitlaized format
+%%% \title{A NEW AND IMPROVED \LaTeX\ CLASS FOR DISSERTATIONS SUBMITTED TO IITM}
 
 \author{Name}
 
-\date{JUL 2020}
+\date{July 2021}
 \department{AEROSPACE ENGINEERING}
 
 
 %\nocite{*}
+\newgeometry{top=2cm, left=1.25in, right=1.27cm, bottom=1.5cm}
 \maketitle
+\restoregeometry
+
+%% For inside cover page which has to be empty with no numbering
+\clearpage \mbox{} \thispagestyle{empty} \clearpage

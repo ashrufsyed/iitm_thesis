@@ -1,5 +1,6 @@
 %%% This template is meant for writing synopsis with IITM guidelines
-\documentclass[PhD,synopsis]{iitmdiss}
+\documentclass[PhD,synopsis,BlueTape]{iitmdiss}
+%% Color choices for left band: BlueTape, YellowTape, NoColor
 
 \input{0_settings/01_packages}
 \input{0_settings/02_commands}
@@ -14,36 +15,52 @@
 % \usepackage{graphicx}
 % \usepackage{epstopdf}
 
-\title{TITLE OF THESIS}
+\title{A New and Improved \LaTeX\ Class for Dissertations Submitted to IIT Madras}
 
 \author{NAME}
 
-\date{JAN 2020}
+\date{July 2021}
 \department{AEROSPACE ENGINEERING}
 
 \begin{document}
 %\nocite{*}
+\newgeometry{top=2cm, right=1.27cm, bottom=1.5cm}
 \maketitle
+\restoregeometry
 
 % The main text will follow from this point so set the page numbering
 % to arabic from here on.
 \pagenumbering{arabic}
 \setcounter{page}{0}
 %\newpage
-\section{Introduction}
 
-Some sample text with a reference 
+%%%  Single spacing for the entire synopsis report
+\singlespacing
 
-\section{Motivation, Objective and Scope}
+The style of preparation (fonts, Chapter No., margins, section and subsection no.,
+equation no., figures, tables, etc.) must be as in case of the thesis. Ph.D. synopsis should be 4-6 pages long and M.S. synopsis should be 2-3 pages
+long, excluding the cover page. Single-line spacing and 12-pt font size should be used in the synopsis. References should be given in 10-pt font size. Here are some examples for citing references: \cite{lamport:86} and \cite{Ahren2005} along with \cite{Roenby2016}. Check the official guidelines for more details.
 
-\section{Summary of the Research Work}
+\section{Abstract}
+Brief outline of the reported research work
+
+\section{Objectives}
+State clear objectives of the research work
+
+\section{Existing Gaps Which Were Bridged}
+Trace to the point, the research gaps that were bridged in the work
+
+\section{Most Important Contributions}
+Briefly emphasize the importance of the research work. Do not necessarily try to elaborate in a detailed manner.
 
 \section{Conclusions}
+Highlight major (and not all) conclusions.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography.
 
-\begin{singlespace}
+%\begin{singlespace}
 %\begin{thebibliography}{10}
 %\addcontentsline{toc}{section}{Bibliography}
 %
@@ -53,32 +70,76 @@ Some sample text with a reference
 %\newblock Journal\ \ {\bf Volume}, Page\ \ (Year).
 %\end{thebibliography}
 
-\end{singlespace}
+%\end{singlespace}
 
-%%%%%%
-\section{Proposed Contents of the Thesis}
-The outline of the thesis is as follows:
-\begin{enumerate}
-\item Chapter 1 title
-\item Chapter 2 title
-\item ...
-\end{enumerate}
+%%%  Older format  %%%
+%\section{Proposed Contents of the Thesis}
+%The outline of the thesis is as follows:
+%\begin{enumerate}
+%\item Chapter 1 title
+%\item Chapter 2 title
+%\item ...
+%\end{enumerate}
 
 
 %\vskip 4cm
 %%%%%%
-\section{Publications}
-\subsection{Papers in Refereed Journals}
-\begin{enumerate}
-\item Title \\
-	{\bf Author 1}, Author 2...\\
-	{\it Journal title.}, {\bf Volume}, Page (Year)
-\end{enumerate}
+\section{List of Publications}
+List of DOIs of any published or presented work
 
-\subsection{Presentations in Conferences}
-\begin{enumerate}
-\item  Presented titled  {\em Title} at the {\bf Conference on...}  place, date..
-\end{enumerate}
+%%%  Older format
+%\subsection{Papers in Refereed Journals}
+%\begin{enumerate}
+%\item Title \\
+%	{\bf Author 1}, Author 2...\\
+%	{\it Journal title.}, {\bf Volume}, Page (Year)
+%\end{enumerate}
+%
+%\subsection{Presentations in Conferences}
+%\begin{enumerate}
+%\item  Presented titled  {\em Title} at the {\bf Conference on...}  place, date..
+%\end{enumerate}
 
+\small %To make font size 10
+	\bibliography{refs}
+
+
+%%%%%%%%%%%%     References     %%%%%%%%%%%%%%
+%% References in the synopsis can be added by either of the two methods: 1) the simpler method which directly uses a .bib file which is an entire library for all the references 2) the not-so-easy process where generating the bib items format (.bbl) file using the .bib library, and then adding the generated .bbl files and recompiling to get the final document
+
+%%% Detailed procedure for the second method (useful for generating your list of publications using bib)
+%%% After adding all the references to the document, compile the tex file with \bibliography{refs} like you did for thesis which uses the refs.bib, the entire library file
+%%% This generates a synonpsis.bbl file which has the references only from the document, and in bibitem format
+%%% Copy the entire text which starts with \begin{thebibliography}, and ends with \end{thebibliography}, and then recompile by commenting out the original \bibliography{refs} line. You might have to recompile few times to get the correct author-year format
+
+%% Below is an example of bbl file that has been generated for the present document
+%\begin{thebibliography}{3}
+%	\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+%	\expandafter\ifx\csname url\endcsname\relax
+%	\def\url#1{{\tt #1}}\fi
+%	\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+%	
+%	\bibitem[{Ahren {\em et~al.\/}(2005)Ahren, Gevci, and Law}]{Ahren2005}
+%	{\bf Ahren, J.}, {\bf B.~Gevci}, and {\bf C.~Law} (2005).
+%	\newblock {ParaView: An End-User Tool for Large-Data Visualization}.
+%	\newblock {\em In\/} {\em Visualization Handbook\/}, 717--731. Elsevier.
+%	\newblock ISBN 978-0123875822.
+%	\newblock \href{https://doi.org/10.1016/B978-012387582-2/50038-1}{\tt
+%		doi:10.1016/B978-012387582-2/50038-1}.
+%	
+%	\bibitem[{Lamport(1986)}]{lamport:86}
+%	{\bf Lamport, L.} (1986).
+%	\newblock {\em \LaTeX: A document preparation system\/}.
+%	\newblock Addision-Wesley.
+%	
+%	\bibitem[{Roenby {\em et~al.\/}(2016)Roenby, Bredmose, and Jasak}]{Roenby2016}
+%	{\bf Roenby, J.}, {\bf H.~Bredmose}, and {\bf H.~Jasak} (2016).
+%	\newblock {A computational method for sharp interface advection}.
+%	\newblock {\em Royal Society Open Science\/}, {\bf 3}(11), 160405.
+%	\newblock ISSN 2054-5703, \href{https://doi.org/10.1098/rsos.160405}{\tt
+%		doi:10.1098/rsos.160405}, \href{https://www.arxiv.org/abs/1601.05392v2}{\tt
+%		arXiv:1601.05392v2}.
+%	
+%\end{thebibliography}
 \end{document}
 

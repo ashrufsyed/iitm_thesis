@@ -97,6 +97,10 @@
 \newif\if@BTech
 \newif\if@Synopsis
 \newif\if@PrntForm
+\newif\if@NoColor
+\newif\if@BlueTape
+\newif\if@YellowTape
+
 
 \DeclareOption{PhD}{\@PhDtrue}
 \DeclareOption{MS}{\@MStrue}
@@ -107,6 +111,9 @@
 \DeclareOption{BTech}{\@BTechtrue}
 \DeclareOption{synopsis}{\@Synopsistrue}
 \DeclareOption{PrntForm}{\@PrntFormtrue}
+\DeclareOption{NoColor}{\@NoColortrue}
+\DeclareOption{BlueTape}{\@BlueTapetrue}
+\DeclareOption{YellowTape}{\@YellowTapetrue}
 \ProcessOptions\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,6 +140,13 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
 \renewcommand{\@pnumwidth}{2.5em}
 %\renewcommand{\@tocrmarg}{2.5em}
 
+%% For adding the color bands on the title page
+\RequirePackage{eso-pic}
+\definecolor{nocolor}{RGB}{255,255,255}
+\definecolor{blutape}{RGB}{0,176,240}
+\definecolor{ylwtape}{RGB}{255,255,0}
+\definecolor{msfnl}{RGB}{0,176,240}
+\definecolor{phdfnl}{RGB}{0,0,0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Using setspace to do the single/double spacing.  Setspace also
@@ -177,7 +191,6 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
 
 %\RequirePackage[dvips]{graphicx}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The title page
 
@@ -188,113 +201,201 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
   \null
   \setcounter{page}{1}
   \parskip=0pt
+  
+  %%%  New format to include color band on the left margin  %%%%
+%  \if@MS
+%  	\if@NoColor
+%  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+%  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+%  	\else
+%  	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+%  	\color{msfnl}\rule{1.25in}{\paperheight}}}
+%  	\fi
+%  \fi
+  \if@PhD
+  	\if@NoColor
+  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+  	\else
+  	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  	\color{phdfnl}\rule{1.25in}{\paperheight}}}
+  	\fi
+  \fi
+  \if@Synopsis
+  	\if@NoColor
+    	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+  	\else
+  		\if@BlueTape
+    		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+			\color{blutape}\rule{1.25in}{\paperheight}}}
+		\fi
+		\if@YellowTape
+	    	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+			\color{ylwtape}\rule{1.25in}{\paperheight}}}
+		\fi
+	\fi
+  \else
+   \if@NoColor
+   		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+   		\color{nocolor}\rule{1.25in}{\paperheight}}}
+   \else
+   		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+   		\color{phdfnl}\rule{1.25in}{\paperheight}}}
+   \fi
+  \fi
+  \if@MS
+  	\if@NoColor
+  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+  	\else
+  		\if@YellowTape
+  			\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  			\color{ylwtape}\rule{1.25in}{\paperheight}}}
+  		\else
+  			\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  			\color{msfnl}\rule{1.25in}{\paperheight}}}
+  		\fi
+  	\fi
+  \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%   The title page content starts here   %%%%%%%%%%%
+\noindent
+\hskip 4ex
+\begin{minipage}[t]{0.21\textwidth}
+	 \centering\raisebox{\dimexpr \topskip-\height+2ex}{%
+		\includegraphics[width=\textwidth]{iitmlogo}}
+\end{minipage} \hfill
+\begin{minipage}[t]{0.45\textwidth}
+	\begin{singlespace}
+		\raggedright
+		\nohyphens{\normalsize DEPARTMENT OF \@department\par
+		INDIAN INSTITUTE OF TECHNOLOGY \\MADRAS\\ 
+		CHENNAI - 600036}
+	\end{singlespace}
+\end{minipage}
+
+%%%  Solid line after the letter head 
+\vskip 2ex%
+\noindent
+\rule{17.7cm}{0.8mm}
+  
+  \vspace{0.3cm}
+
   \begin{center}%
   \let \footnote \thanks
   \vglue 0in % this makes top margin 2in
-  \vskip -5ex%
-  \if@Synopsis
-    {\large \em SYNOPSIS OF \par}
-  \fi
-    {\Large \bf \expandafter{\@title} \par}%
-    \vskip 10ex%
+  \vskip 1ex%
+%	\parbox[s]{0.8\textwidth}{ \centering
+%	\Large \bf \expandafter{\@title} \par \vskip 2ex}
+	\begin{tcolorbox}[sharp corners, 
+		width=12cm,
+		%boxsep=1pt,
+		boxrule=1pt,
+		left=1pt,
+		right=1pt,
+		top=2pt,]
+		\centering \nohyphens{\Large \bf \expandafter{\@title}}
+	\end{tcolorbox}
+	\vskip 2ex
+  	\if@Synopsis
+		\par
+	\else
+		\IfFileExists{titleImage.png}{\centerline{\includegraphics[height=7cm]{titleImage}}}{\par}
+	\fi
+    \if@Synopsis
+		\vskip 15ex%
+	\else
+		\IfFileExists{titleImage.png}{\vskip 4ex}{\vskip 15ex}%
+	\fi
     {\normalsize
       \if@PhD
-         {\em A THESIS }\par
-         \vskip 5ex%
+         {\em A Thesis }\par
          \if@Synopsis
-            {\normalsize \em to be submitted by \par}
+            {\normalsize \em To be submitted by \par}
          \else
-            {\normalsize \em submitted by \par}
+            {\normalsize \em Submitted by \par}
          \fi
-         \vskip 5ex%
-         {\bf \large\MakeUppercase{\@author}\par\par}
-         \vskip 5ex%
-         {\em for the award of the degree }\par
-         \vskip 5ex%
-         {\em of} \par
-         \vskip 5ex%
-         {\bf \large \MakeUppercase{Doctor of Philosophy}} \par
+         {\bf \normalsize \MakeUppercase{\@author}\par\par}
+         \if@Synopsis
+         	\vskip 15ex%
+         \else
+         	\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
+         \fi
+         {\em For the award of the degree }\par
+         {\em Of} \par
+         {\bf \normalsize \MakeUppercase{Doctor of Philosophy}} \par
        \else
          \if@MS
-            {\em A THESIS }\par
-            \vskip 5ex%
-            {\normalsize \em submitted by \par}
-            \vskip 5ex%
-            {\bf \large\MakeUppercase{\@author}\par\par}
-            \vskip 5ex%
-            {\em for the award of the degree }\par
-            \vskip 5ex%
-            {\em of} \par
-            \vskip 5ex%
-            {\bf \large \MakeUppercase{Master of Science}} \par
-            (by Research) \par
+         {\em A Thesis }\par
+			\if@Synopsis
+				{\normalsize \em To be submitted by \par}
+			\else
+				{\normalsize \em Submitted by \par}
+			\fi
+		 {\bf \normalsize \MakeUppercase{\@author}\par\par}
+         \if@Synopsis
+         	\vskip 15ex%
+         \else
+         	\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
+         \fi
+		 {\em For the award of the degree }\par
+		 {\em Of} \par
+         {\bf \normalsize \MakeUppercase{Master of Science} \par
+            (by Research) \par}
        \else
        	 \if@DD
        		{\em A Project Report }\par
-       		\vskip 5ex%
-       		{\normalsize \em submitted by \par}
-       		\vskip 5ex%
-       		{\bf \large\MakeUppercase{\@author}\par\par}
-       		\vskip 5ex%
-       		{\normalsize \em in partial fulfilment of the requirements\par
-       			for the award of the \par}
-       		\vskip 5ex%
-       		{\bf \large \MakeUppercase{Dual Degree}} \par
-       		(B.Tech. and M.Tech.) \par
+       		{\normalsize \em Submitted by \par}
+       		{\bf \normalsize \MakeUppercase{\@author}\par\par}
+       		\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
+       		{\normalsize \em In the partial fulfilment of requirements\par
+       			For the award of the \par}
+       		{\bf \normalsize \MakeUppercase{Dual Degree} (B.Tech. and M.Tech.)} \par
 		% Uncomment below lines for specialization
-                \vskip 1ex%
                 {\normalsize \em with specialization in \par}
-		\vskip 1ex%
-		{\bf \normalsize \MakeUppercase{Applied Mechanics with Biomedical Engineeering}\par\par}
+			{\bf \normalsize Applied Mechanics with Biomedical Engineering \par\par}
        	\else
            {\em A Project Report }\par
-           \vskip 5ex%
-           {\normalsize \em submitted by \par}
-           \vskip 5ex%
-           {\bf \large\MakeUppercase{\@author}\par\par}
-           \vskip 5ex%
-           {\normalsize \em in partial fulfilment of the requirements\par
-             for the award of the degree of \par}
-           \vskip 5ex%
+           {\normalsize \em Submitted by \par}
+           {\bf \normalsize \MakeUppercase{\@author}\par\par}
+           \IfFileExists{titleImage.png}{\vskip 4ex}{\vskip 15ex}%
+           {\normalsize \em In the partial fulfilment of requirements\par
+             For the award of the degree \par}
+           {\em Of} \par
            \if@MTech
-              {\bf \large \MakeUppercase{Master of Technology}}
+              {\bf \normalsize \MakeUppercase{Master of Technology}} \par
            \fi
            \if@MBA
-           	  {\bf \large \MakeUppercase{Master of Business Administration}} \par
+           	  {\bf \normalsize \MakeUppercase{Master of Business Administration}} \par
            \fi
            \if@MSc
-              {\bf \large \MakeUppercase{Master of Science}} \par
+              {\bf \normalsize \MakeUppercase{Master of Science}} \par
            \fi
            \if@BTech
-              {\bf \large \MakeUppercase{Bachelor of Technology}}
+              {\bf \normalsize \MakeUppercase{Bachelor of Technology}} \par
            \fi
           \fi
          \fi
       \fi
     }
+	\if@Synopsis
+		\par
+  	\else 
+  		{\normalsize \@date}
+  	\fi
   \end{center}%
-
-  \vspace*{0.8in}
-  %\centerline{\psfig{figure=emblem.ps}}
-%  \centerline{\includegraphics{iitmlogo.eps}}
-%  \centerline{\includegraphics[scale=1.]{iitm}}
-  \centerline{\includegraphics[width=3.8cm]{iitmlogo}}
-  \vspace*{-0.15in}
-  \begin{center}
-    {\bf \large DEPARTMENT OF \@department\par}
-    {\bf \large INDIAN INSTITUTE OF TECHNOLOGY MADRAS}
-    \vglue 0.50em
-    {\bf \large \@date}\par
-  \end{center}
-  \parskip 8pt
-
 }
+%%%%%%%%%%%%%%%   Title page content ends here   %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\titlepage{\newpage\thispagestyle{empty}\c@page\z@}
 \def\endtitlepage{\newpage}
 
+
 \if@Synopsis
-   \renewcommand\refname{REFERENCES}
+%   \renewcommand\refname{REFERENCES}
 \else
    % QUOTATIONS
    %
@@ -319,7 +420,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
    \def\certificate{\chapter*{\centerline{THESIS CERTIFICATE}}%% A preliminary chapter
      %\vspace*{36pt}
      %\centerline{\Large \bf THESIS CERTIFICATE}
-     \vskip 15pt
+     \vskip 10pt
      \thispagestyle{empty}
      %\typeout{Certificate}
      %\setcounter{page}{-1}
@@ -327,16 +428,27 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
    \else
    \if@MS
 	\def\certificate{\chapter*{\centerline{THESIS CERTIFICATE}}%% A preliminary chapter
-	\vskip 15pt
+	\vskip 10pt
 	\thispagestyle{empty}
 	}
    \else
    \def\certificate{\chapter*{\centerline{CERTIFICATE}}%% A preliminary chapter
-	\vskip 15pt
+	\vskip 10pt
 	\thispagestyle{empty}
 	}
 	\fi
 	\fi
+	
+
+	%%%  LIST OF PAPERS
+	\def\listofpapers{
+	%\normalbaselines
+	\chapter*{\centerline{LIST OF PUBLICATIONS}}
+	%\markboth{LIST OF PUBLICATIONS}{LIST OF PUBLICATIONS}
+	%\addcontentsline{toc}{chapter}{LIST OF PUBLICATIONS}
+	\vskip 10pt
+	\thispagestyle{empty}
+	}
 
 
    % ACKNOWLEDGEMENTS
@@ -400,15 +512,6 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
        \Large \bfseries #1\par\nobreak
        \vskip 20\p@
      }}
-
-
-   %LIST OF PAPERS
-   \def\listofpapers{
-           \normalbaselines
-           \chapter*{\centerline{LIST OF PUBLICATIONS}}
-           \markboth{LIST OF PUBLICATIONS}{LIST OF PUBLICATIONS}
-           \addcontentsline{toc}{chapter}{LIST OF PUBLICATIONS}
-   }
 
    
    % CV

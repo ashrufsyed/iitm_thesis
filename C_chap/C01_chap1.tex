@@ -5,7 +5,8 @@
 This document provides a simple template of how the provided
 \verb+iitmdiss.cls+ \LaTeX\ class is to be used.  Also provided are
 several useful tips to do various things that might be of use when you
-write your thesis.
+write your thesis. The template has been standardized in caompliance
+with the new format guidelines released in Feb 2021. 
 
 Before reading any further please note that you are strongly advised
 against changing any of the formatting options used in the class
@@ -15,12 +16,24 @@ does not violate the IITM formatting guidelines.  \emph{Please do not
 you are on your own (don't blame me if you need to reprint your entire
 thesis).  In the case that you do change the formatting despite these
 warnings, the least I ask is that you do not redistribute your style
-files to your friends (or enemies).
+files to your friends (or enemies). 
+
+Also, since we are talking about the responsibility here, 
+like any other piece of freely-distributable code, this template
+and other files within this folder are provided “as is”, and there is 
+no guarantee of any kind from the author. In short, that means, 
+it is your personal responsibility to make sure the template is 
+complaint with the guidelines, and I cannot be held responsible.
+
 
 It is also a good idea to take a quick look at the formatting
-guidelines.  Your office or advisor should have a copy.  If they
+guidelines.  Your office or advisor also should have a copy.  If they
 don't, pester them, they really should have the formatting guidelines
-readily available somewhere.
+readily available somewhere. I personally would strongly
+suggest you to go through them even before you venture into the present
+template. For convenience, the formatting guidelines have been included
+in a separate folder along with other proformas required while 
+submitting your synopsis or thesis.
 
 To compile your sources run the following from the command line:
 \begin{verbatim}
@@ -29,7 +42,8 @@ To compile your sources run the following from the command line:
 % latex thesis.tex
 % latex thesis.tex
 \end{verbatim}
-Modify this suitably for your sources.
+Modify this suitably for your sources. Or you can use standard \TeX environments
+like \TeX Studio, \TeX Maker etc., to make this process way simpler.
 
 To generate PDF's with the links from the \verb+hyperref+ package use
 the following command:
@@ -50,6 +64,15 @@ For getting a print form of the same thesis, add the option \verb+PrntForm+ like
 \documentclass[PhD,PrntForm]{iitmdiss}  
 \end{verbatim}
 
+There are also default color bars on the title page in the new format.
+For PhD thesis, the default would be black, and for MS thesis, it is cyan-blue. 
+As for other programmes, there has not been any specific guidelines on how to 
+make the title page, so black has been set as default. There is also 'NoColor'
+option you can give to not print this color bar.
+\begin{verbatim}
+\documentclass[PhD,PrntForm,NoColor]{iitmdiss}  
+\end{verbatim}
+
 To change the title page for different degrees just change the option
 from \verb+PhD+ to one of \verb+MS+, \verb+MTech+, \verb+DD+, \verb+MBA+, \verb+MSc+ or \verb+BTech+.
 The other specific degrees are not supported yet but should be quite easy
@@ -58,16 +81,41 @@ small your thesis title is.  Consequently it might require some hand
 tuning.  Edit your version of \verb+iitmdiss.cls+ suitably to do this.
 I recommend that this be done once your title is final.
 
+The new format has an option to include a visually appealing figure/image
+from your thesis. I have given the file name as \verb+titleImage.png+ for this
+sample image from my work. So if you are planning to use it, place that image file 
+in png format with the main folder and rename it as \verb+titleImage.png+. 
+But if you are not happy with this concept, and want to include custom image formats or file name 
+of your image/figure, and are comfortable in \LaTeX, I would suggest editing the \verb+iitmdiss.cls+.
+Look for \verb+titleImage+ string, and start editing there. You can also 
+
 To write a synopsis simply use the \verb+synopsis.tex+ file as a
 simple template.  The synopsis option turns this on and can be used as
-shown below.
+shown below:
 \begin{verbatim}
 \documentclass[PhD,synopsis]{iitmdiss}                                
 \end{verbatim}
 
-Once again the title page may require some small amount of fine
-tuning.  This is again easily done by editing the class file.
+For synopsis, the concept of 'Blue' or 'Yellow' tape to represent
+the draft and approved reports has to be reflected on the title page
+of respective documents in the new guidelines. Remember that there is a 
+compliance-checking staff at the DR office who would ensure you submit it
+with right color coding. Or else, you might have to re-make and re-submit
+the report again. Options to give would be 'BlueTape' or 'YellowTape',
+and can be used as shown below:
+\begin{verbatim}
+\documentclass[PhD,synopsis,BlueTape]{iitmdiss}                                
+\end{verbatim}
 
+Like thesis, there is a 'NoColor' option for synopsis as well, but it won't
+be that useful. Also default option gives black color bar.
+
+
+If you want to modify spacing between the lines/text of the title page, again 
+it can be easily done by editing the class file if you are familiar,
+and may require some small amount of fine tuning.
+ 
+ 
 This sample file uses the \verb+hyperref+ package that makes all
 labels and references clickable in both the generated DVI and PDF
 files.  These are very useful when reading the document online and do
@@ -82,6 +130,11 @@ single spaced and indented.  Table~\ref{tab:sample} shows a sample
 table with the caption placed correctly.  The caption for this should
 always be placed before the table as shown in the example.
 
+In the new format, emphasis has been made on the proper copyright compliance 
+when reusing figures/images/tables from other authors and sources. Relevant
+attributions and usage policy has to be included within the thesis certificate
+page. An example has been provided for the usage of IIT Madras logo that 
+is used as a sample figure in the present template.
 
 \begin{figure}[htpb]
   \begin{center}
@@ -121,7 +174,10 @@ your bibliography.  It makes managing your references much easier.  It
 is an excellent way to organize your references and reuse them.  You
 can use one set of entries for your references and cite them in your
 thesis, papers and reports.  If you haven't used it anytime before
-please invest some time learning how to use it.  
+please invest some time learning how to use it. Also you can use reference
+managers like Mendeley, Zotero etc., to import these bib-formatted library
+with all the references, making the citation process less painful. 
+The \verb+refs.bib+ used in this template is one such example.
 
 I've included a simple example BIB\TeX\ file along in this directory
 called \verb+refs.bib+.  The \verb+iitmdiss.cls+ class package which
