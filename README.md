@@ -5,7 +5,7 @@
 ([`thesis.tex`](thesis.tex), [`synopsis.tex`](synopsis.tex) and [`chapter.tex`](chapter.tex)) that should format a report as per these guidelines.  
 - The page layout is set using the `geometry` package.  
 - The double/singlespacing is setup using `setspace`.
-- Figure captions are set using the `hang` option of `caption2`.  
+- Figure captions are set using the `subcaption` or `caption2` packages depending on the presence of subfigures.
 - `natbib` is used to do the citation using an author-year format. I've made an `iitm.bst` file that formats the references as per the IITM guidelines.
 - Additional proformas required during preparation and submission are given in a combined word file named ['ProformasCertificates_New.docx'](FormatsGuidelinesProformas/ProformasCertificates_New.docx)
 - Previous guidelines, forms, templates and files are archived into [oldGuidelines folder](FormatsGuidelinesProformas/oldGuidelines)
@@ -71,7 +71,7 @@ Copyright (C) 2019-2021 Ashruf Syed
 - added the option `PrntForm` to produce thesis with the necessary blank pages for printing
 - added `clean.sh` bash file (works with Linux systems which uses bash) to clean the latex files for a fresh compilation
 - separation of main tex file from its chapter/sections (using `\include{file}` option) along with proper grouping and labeling of files for easier sorting and debugging
-       	(A01_title, B01_abstract, C01_chap1, D01_app1 and E01_lop)
+       	(A01_title, B01_abstract, C01_chap1, D01_app1 etc.)
 - added sample pages for quotations, dedication, glossary, abbreviations and notation
 - cleaned up few parts where page numbers aren't required (quotes/dedication pages)
 - added `tabular` method for glossary/notation/abbreviations to avoid text overflow in long phrases that results from the usage of `tabbing`
