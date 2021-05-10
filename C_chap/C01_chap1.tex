@@ -2,155 +2,118 @@
 %\chapter[short entry]{long title}
 \label{chap:intro}
 
-This document provides a simple template of how the provided
-\verb+iitmdiss.cls+ \LaTeX\ class is to be used.  Also provided are
-several useful tips to do various things that might be of use when you
-write your thesis. The template has been standardized in caompliance
-with the new format guidelines released in Feb 2021. 
+This document provides a simple template of how the provided \verb+iitmdiss.cls+ \LaTeX\ class is to be used.  Also provided are several valuable tips for doing various things that might be useful when
+writing your thesis. I have standardized the template in compliance with the new format guidelines released in Feb 2021. The source code is present on my Github page \citep{SyedGit2021}, which can help cite the contribution of this work and raise any issues or bugs encountered within this template.
 
-Before reading any further please note that you are strongly advised
-against changing any of the formatting options used in the class
-provided in this directory, unless you are absolutely sure that it
-does not violate the IITM formatting guidelines.  \emph{Please do not
-  change the margins or the spacing.}  If you do change the formatting
-you are on your own (don't blame me if you need to reprint your entire
-thesis).  In the case that you do change the formatting despite these
-warnings, the least I ask is that you do not redistribute your style
-files to your friends (or enemies). 
+Before reading any further, please note that you are strongly advised against changing any of the formatting options used in the class provided in this directory unless you are absolutely sure that it
+does not violate the IITM formatting guidelines.  \emph{Please do not change the margins or the spacing.}   Despite these warnings, if you do change the formatting, you are on your own (do not blame me if you need to reprint your entire
+thesis). The least I ask is that you do not redistribute your style/class files to your friends (or enemies). 
 
-Also, since we are talking about the responsibility here, 
-like any other piece of freely-distributable code, this template
-and other files within this folder are provided “as is”, and there is 
-no guarantee of any kind from the author. In short, that means, 
-it is your personal responsibility to make sure the template is 
-complaint with the guidelines, and I cannot be held responsible.
+Also, since we are talking about the responsibility here, like any other piece of freely distributable code, this template and other files within this folder are provided "as is." There is no guarantee of any kind from the author. In short, that means it is your personal responsibility to make sure the template is compliant with the guidelines, and I cannot be held responsible.
 
+It is also a good idea to take a quick look at the formatting guidelines. In fact, I would strongly suggest you go through them even before you venture into the present template. They are included in a separate folder along with other proformas required while submitting your synopsis or thesis for convenience. Also, your office or advisor should have a copy of these guidelines with them. If they do not, pester them, as they really should have the latest formatting guidelines readily available somewhere. 
 
-It is also a good idea to take a quick look at the formatting
-guidelines.  Your office or advisor also should have a copy.  If they
-don't, pester them, they really should have the formatting guidelines
-readily available somewhere. I personally would strongly
-suggest you to go through them even before you venture into the present
-template. For convenience, the formatting guidelines have been included
-in a separate folder along with other proformas required while 
-submitting your synopsis or thesis.
-
-To compile your sources run the following from the command line:
+To compile your sources, run the following from the command line:
 \begin{verbatim}
 % latex thesis.tex
 % bibtex thesis
 % latex thesis.tex
 % latex thesis.tex
 \end{verbatim}
-Modify this suitably for your sources. Or you can use standard \TeX environments
-like \TeX Studio, \TeX Maker etc., to make this process way simpler.
+Modify this suitably for your sources. Alternatively, you can use standard \TeX environments like \TeX Studio, \TeX Maker, etc., to make this process much simpler.
 
-To generate PDF's with the links from the \verb+hyperref+ package use
-the following command:
+To generate PDFs with the links from the \verb+hyperref+ package, use the following command:
 \begin{verbatim}
 % dvipdfm -o thesis.pdf thesis.dvi
 \end{verbatim}
 
 \section{Package Options}
 
-Use this thesis as a basic template to format your thesis.  The
-\verb+iitmdiss+ class can be used by simply using something like this:
+This file serves as a minimal template to start formating your thesis. The \verb+iitmdiss+ class can be used by simply using something like this:
 \begin{verbatim}
 \documentclass[PhD]{iitmdiss}  
 \end{verbatim}
 
-For getting a print form of the same thesis, add the option \verb+PrntForm+ like:
+For getting a print form of the same thesis, with the chapters starting on the right side, and appropriate blank pages wherever necessary, add the option \verb+PrntForm+ like:
 \begin{verbatim}
 \documentclass[PhD,PrntForm]{iitmdiss}  
 \end{verbatim}
 
-There are also default color bars on the title page in the new format.
-For PhD thesis, the default would be black, and for MS thesis, it is cyan-blue. 
-As for other programmes, there has not been any specific guidelines on how to 
-make the title page, so black has been set as default. There is also 'NoColor'
-option you can give to not print this color bar.
+There are also default color bars on the title page in the new format. For the Ph.D. thesis, the default would be black, and for the MS thesis, it is cyan-blue. As for other programmes, there have not been any specific guidelines for making the title page, so black has been set as default. There is also 'NoColor' option you can give not to print this color bar.
+
 \begin{verbatim}
 \documentclass[PhD,PrntForm,NoColor]{iitmdiss}  
 \end{verbatim}
 
-To change the title page for different degrees just change the option
-from \verb+PhD+ to one of \verb+MS+, \verb+MTech+, \verb+DD+, \verb+MBA+, \verb+MSc+ or \verb+BTech+.
-The other specific degrees are not supported yet but should be quite easy
-to add if you look at the code used to generate above degree pages in \verb+iitmdiss.cls+ file.  The title page formatting really depends on how large or
-small your thesis title is.  Consequently it might require some hand
-tuning.  Edit your version of \verb+iitmdiss.cls+ suitably to do this.
-I recommend that this be done once your title is final.
+To change the title page for different degrees just change the option from \verb+PhD+ to one of \verb+MS+, \verb+MTech+, \verb+DD+, \verb+MBA+, \verb+MSc+ or \verb+BTech+. The other specific degrees are not supported yet. However, they should be quite easy to add if you look at the code used to generate the above degree pages in \verb+iitmdiss.cls+ file.  The title page formatting depends on how large or small your thesis title is.  Consequently, it might require some hand-tuning.  Edit the options in the \verb+iitmdiss.cls+ file for it to suitably do this. I recommend doing this as a first step once your title is final.
 
-The new format has an option to include a visually appealing figure/image
-from your thesis. I have given the file name as \verb+titleImage.png+ for this
-sample image from my work. So if you are planning to use it, place that image file 
-in png format with the main folder and rename it as \verb+titleImage.png+. 
-But if you are not happy with this concept, and want to include custom image formats or file name 
-of your image/figure, and are comfortable in \LaTeX, I would suggest editing the \verb+iitmdiss.cls+.
-Look for \verb+titleImage+ string, and start editing there. You can also 
+The new format has an option to include a visually appealing figure/image from your thesis. I have given the file name as \verb+titleImage.png+ for this sample image from my work. So if you are planning to use it, place that image file in png format with the main folder and rename it as \verb+titleImage.png+. Nevertheless, if you are not happy with this concept and want to include custom image formats or the file name of your image/figure, I would suggest editing the \verb+iitmdiss.cls+. You should be comfortable in \LaTeX code for doing so. Look for \verb+titleImage+ string, and start editing there.
 
-To write a synopsis simply use the \verb+synopsis.tex+ file as a
-simple template.  The synopsis option turns this on and can be used as
-shown below:
+To write a synopsis, use the \verb+synopsis.tex+ file as a simple template. The synopsis option turns this on and can be used as shown below:
 \begin{verbatim}
 \documentclass[PhD,synopsis]{iitmdiss}                                
 \end{verbatim}
 
-For synopsis, the concept of 'Blue' or 'Yellow' tape to represent
-the draft and approved reports has to be reflected on the title page
-of respective documents in the new guidelines. Remember that there is a 
-compliance-checking staff at the DR office who would ensure you submit it
-with right color coding. Or else, you might have to re-make and re-submit
-the report again. Options to give would be 'BlueTape' or 'YellowTape',
-and can be used as shown below:
+For synopsis, the concept of 'Blue' or 'Yellow' tape to represent the draft and approved reports must be reflected on the title page of respective documents in the new guidelines. Remember that there is a compliance-checking staff at the DR office who would ensure you submit it with the proper color coding. Else, you might have to re-make and re-submit the report again. Options to give would be 'BlueTape' or 'YellowTape' and can be used as shown below:
 \begin{verbatim}
 \documentclass[PhD,synopsis,BlueTape]{iitmdiss}                                
 \end{verbatim}
 
-Like thesis, there is a 'NoColor' option for synopsis as well, but it won't
-be that useful. Also default option gives black color bar.
+Like the thesis, there is a 'NoColor' option for the synopsis, but it will not be that useful. Also, the default option gives a black color bar.
+
+Suppose you want to modify the spacing between the lines/text of the title page. In that case, it can be quickly done by editing the class file if you are familiar with \LaTeX and requiring some minor fine-tuning.
 
 
-If you want to modify spacing between the lines/text of the title page, again 
-it can be easily done by editing the class file if you are familiar,
-and may require some small amount of fine tuning.
- 
- 
-This sample file uses the \verb+hyperref+ package that makes all
-labels and references clickable in both the generated DVI and PDF
-files.  These are very useful when reading the document online and do
-not affect the output when the files are printed.
+This sample file uses the \verb+hyperref+ package that makes all labels and references clickable in both the generated DVI and PDF files.  These are very useful when reading the document online and do not affect the output when the files are printed.
 
+\section{Example Figures and Tables}
 
-\section{Example Figures and tables}
+Figure~\ref{fig:iitm} shows a simple figure with sub-figures and sub-captions for illustration along with a long caption using \verb+subcaption+ package.  A sample commented code using \verb|resizebox| has also been given if you prefer to use that instead. Either way, the formatting of caption text is automatically single-spaced and indented.
 
-Figure~\ref{fig:iitm} shows a simple figure for illustration along with
-a long caption.  The formatting of the caption text is automatically
-single spaced and indented.  Table~\ref{tab:sample} shows a sample
-table with the caption placed correctly.  The caption for this should
-always be placed before the table as shown in the example.
+%%%  Sample figure-subfigure using 'resizebox' package
+%\begin{figure}[htpb]
+%  \begin{center}
+%    \resizebox{50mm}{!} {\includegraphics *{iitmlogo.eps}}
+%    \resizebox{50mm}{!} {\includegraphics *{iitmlogo.eps}}
+%    \caption {Two IITM logos in a row.  This is also an
+%      illustration of a very long figure caption that wraps around two
+%      two lines.  Notice that the caption is single-spaced.}
+%  \label{fig:iitm}
+%  \end{center}
+%\end{figure}
 
-In the new format, emphasis has been made on the proper copyright compliance 
-when reusing figures/images/tables from other authors and sources. Relevant
-attributions and usage policy has to be included within the thesis certificate
-page. An example has been provided for the usage of IIT Madras logo that 
-is used as a sample figure in the present template.
+%%%  Sample figure-subfigure using 'subcaption' package
+% Notice the values of \textwidth and \linewidth used to achieve the placement of sub-figures
+\begin{figure}[htpb] % '%' is required between two subfigures to keep the next subfigure in the same row
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{iitmlogo.eps}
+		\caption{}
+		\label{fig:iitma}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{iitmlogo.eps}
+		\caption{}
+		\label{fig:iitmb}
+	\end{subfigure} 	% A blank line next to change the row
 
-\begin{figure}[htpb]
-  \begin{center}
-    \resizebox{50mm}{!} {\includegraphics *{iitmlogo.eps}}
-    \resizebox{50mm}{!} {\includegraphics *{iitmlogo.eps}}
-    \caption {Two IITM logos in a row.  This is also an
-      illustration of a very long figure caption that wraps around two
-      two lines.  Notice that the caption is single-spaced.}
-  \label{fig:iitm}
-  \end{center}
+	\begin{subfigure}{1\textwidth}
+		\centering
+		\includegraphics[width=0.45\linewidth]{iitmlogo.eps}
+		\caption{}
+		\label{fig:iitmc}
+\end{subfigure}
+    \caption {Two IITM logos in a row and another in the next row (a) One logo, (b) Adjacent logo, and (c) Another logo in the next row. It is also an example of a very long figure caption that wraps around more than two lines. Notice that the caption is single-spaced.}
+\label{fig:iitm}
 \end{figure}
 
+In the new format, emphasis has been made on the proper copyright compliance when reusing figures/images/tables from other authors and sources. Appropriate attributions and usage policies have to be included within the thesis certificate page. An example has been provided for using the IIT Madras logo as a sample figure in the present template.
+
+Table~\ref{tab:sample} shows a sample table with the caption placed correctly. The caption for this should always be placed before the table, as shown in the example. Like figure captions, the text is automatically single-spaced and indented.
+
 \begin{table}[htbp]
-  \caption{A sample table with a table caption placed
-    appropriately. This caption is also very long and is
-    single-spaced.  Also notice how the text is aligned.}
+  \caption{A sample table with its caption placed appropriately. This is also very long and is single-spaced. Also notice how the text is aligned.}
   \begin{center}
   \begin{tabular}[c]{|c|r|} \hline
     $x$ & $x^2$ \\ \hline
@@ -169,83 +132,34 @@ is used as a sample figure in the present template.
 
 \section{Bibliography with BIB\TeX}
 
-I strongly recommend that you use BIB\TeX\ to automatically generate
-your bibliography.  It makes managing your references much easier.  It
-is an excellent way to organize your references and reuse them.  You
-can use one set of entries for your references and cite them in your
-thesis, papers and reports.  If you haven't used it anytime before
-please invest some time learning how to use it. Also you can use reference
-managers like Mendeley, Zotero etc., to import these bib-formatted library
-with all the references, making the citation process less painful. 
-The \verb+refs.bib+ used in this template is one such example.
+I strongly recommend that you use BIB\TeX\ to generate your bibliography automatically.  It makes managing your references much more effortless.  It is an excellent way to organize your references and reuse them.  You can use one set of entries for your references and cite them in your thesis, papers, and reports.  If you have not used it anytime before, please invest some time learning how to use it. Also, you can use reference
+managers like Mendeley, Zotero, EndNote, etc., to import this bib-formatted library with all your references. It makes the citation process less painful. The \verb+refs.bib+ file used in this template is one such example.
 
-I've included a simple example BIB\TeX\ file along in this directory
-called \verb+refs.bib+.  The \verb+iitmdiss.cls+ class package which
-is used in this thesis and for the synopsis uses the \verb+natbib+
-package to format the references along with a customized bibliography
-style provided as the \verb+iitm.bst+ file in the directory containing
-\verb+thesis.tex+.  Documentation for the \verb+natbib+ package should
-be available in your distribution of \LaTeX.  Basically, to cite the
-author along with the author name and year use \verb+\cite{key}+ where
-\verb+key+ is the citation key for your bibliography entry.  You can
-also use \verb+\citet{key}+ to get the same effect.  To make the
-citation without the author name in the main text but inside the
-parenthesis use \verb+\citep{key}+.  The following paragraph shows how
-citations can be used in text effectively.
+I have included a simple example BIB\TeX\ file along in this directory called \verb+refs.bib+.  The \verb+iitmdiss.cls+ class package used in this thesis and for the synopsis adopts the \verb+natbib+ package to format the references with a customized bibliography style. It is provided as the \verb+iitm.bst+ file in the directory containing \verb+thesis.tex+.  Documentation for the \verb+natbib+ package should be available in your distribution of \LaTeX.  To cite the author along with the author name and year, use \verb+\cite{key}+ where \verb+key+ is the citation key for your bibliography entry.  You can also use \verb+\citet{key}+ to get the same effect.  To make the citation without the author name in the main text but inside the parenthesis, use \verb+\citep{key}+.  The following paragraph shows how citations can be used in text effectively.
 
-More information on BIB\TeX\ is available in the book by
-\cite{lamport:86}, which is a citation for book. \cite{lamport1:86} is
-the same book citation in the old format where the year comes at the end.
- Now to cite the references within parentheses. There are many 
-references~\citep{lamport:86} that explain 
-how to use BIB\TeX.  Read the \verb+natbib+ package documentation 
-for more details on how to cite things differently.
+More information on BIB\TeX\ is available in the book by \cite{lamport:86}, which is a citation for the book. \cite{lamport1:86} is the same book citation in the old format where the year comes at the end. Now to cite the references within parentheses. There are many references~\citep{lamport:86} that explain how to use BIB\TeX.  Read the \verb+natbib+ package documentation for more details on how to cite things differently.
 
-Here are other references for example.  The present study has been 
-carried out in OpenFOAM which is based on \cite{Weller1998}. 
-The Lagrangian solver has two injection models based on the nature 
-of injection source viz. \texttt{pointInjection} model which injects
-the spray at a given point, and \texttt{detailed- SprayProfileInjection}
-model which injects the spray over a spherical sector of given injection
-radius. The configuration and experimental data to compare the spray
-statistics is taken from \cite{Zhou2015a}
+Here are other references, for example.  The present study has been carried out in OpenFOAM, which is based on \cite{Weller1998}. The Lagrangian solver has two injection models based on the nature of the injection source, viz. \texttt{pointInjection} model, which injects the spray at a given point, and \texttt{detailedSprayProfileInj- ection} model, which injects the spray over a spherical sector of a given injection radius. The configuration and experimental data to compare the spray statistics is taken from \cite{Zhou2015a}
 
-The above paragraphs had journal and book references.
-Other sample references to check are: for thesis \cite{Syed2013,
-Cheekati2014,Syed2020}, for conferences \cite{Sasidharan2017,Syed2018,
-Syed2018a}, for manual \cite{Ayachit2015},  for book chapter \cite{Ahren2005}.
-One more reference, \cite{Roenby2016} with arxiv and doi.
+The above paragraphs had journal and book references. Other sample references to check are: for thesis \cite{Syed2013,Cheekati2014,Syed2020}, for conferences \cite{Sasidharan2017,Syed2018,Syed2018a}, for manual \cite{Ayachit2015},  for book chapter \cite{Ahren2005}.One more reference, \cite{Roenby2016} with arxiv and doi.
 
-Python~\citep{py:python} is a programming language and is
-cited here to show how to cite something that is best identified with
-a URL. For technical report, \cite{Syed2015} is an example,
-and \cite{UnitedNations2019} is an example of a non-technical report.
+Python~\citep{py:python} is a programming language and is cited here to show how to cite something that is best identified with a URL. For the technical report, \cite{Syed2015} is an example, and \cite{UnitedNations2019} is an example of a non-technical report.
 
 \section{Other useful \LaTeX\ packages}
 
-The following packages might be useful when writing your thesis.
+The following packages might be helpful when writing your thesis. It is also an illustration of using pointers in your thesis where the text spacing within each pointer is single-spaced. There is a double spacing between two adjacent pointers.
 
 \begin{itemize}  
-\item It is very useful to include line numbers in your document.
-  That way, it is very easy for people to suggest corrections to your
-  text.  I recommend the use of the \texttt{lineno} package for this
-  purpose.  This is not a standard package but can be obtained on the
-  internet.  The directory containing this file should contain a
-  lineno directory that includes the package along with documentation
-  for it.
-
-\item The \texttt{listings} package should be available with your
-  distribution of \LaTeX.  This package is very useful when one needs
-  to list source code or pseudo-code.
-
-\item For special figure captions the \texttt{ccaption} package may be
-  useful.  This is specially useful if one has a figure that spans
-  more than two pages and you need to use the same figure number.
-
-\item The notation page can be entered manually or automatically
-  generated using the \texttt{nomencl} package.
-
+	\item It is handy to include line numbers in your document. That way, it is straightforward for people to suggest corrections to your text. I recommend the usage of the \texttt{lineno} package for this purpose. It is not a standard package but can be obtained on the internet. The directory containing this file should contain a \verb|lineno| directory that includes the package and documentation for it.
+	
+	\item The \texttt{listings} package should be available with your
+	distribution of \LaTeX.  This package is handy when one needs to list source code or pseudo-code.
+	
+	\item For special figure captions the \texttt{ccaption} package may be useful.  It is advantageous if one has a figure that spans more than two pages, and you need to use the same figure number.
+	
+	\item The notation page can be entered manually or automatically generated using the \texttt{nomencl} package.
+	
 \end{itemize}
 
-More details on how to use these specific packages are available along
+More details on how to use these specific packages are available, along
 with the documentation of the respective packages.

@@ -15,21 +15,29 @@
 \usepackage{enumerate}
 \usepackage{bibentry}
 \usepackage{graphicx,xcolor,multicol,eso-pic,mwe,hyphenat}
-\usepackage{tcolorbox} % for Textboxes in title
+\usepackage{tcolorbox}[ % for Textboxes in title
+	colback=White
+%    standard enhanced, % for transparent background
+%	opacityfill=0
+	]
+
 \usepackage{epstopdf}
 \epstopdfsetup{
-        suffix=,
+	suffix=,
 }
 
 %% Captions, SI units and IUPAC naming
-\usepackage{caption,subcaption,rotating,pdflscape}
+\usepackage{caption,subcaption,rotating,pdflscape,float}
+%\usepackage{lscape,multirow,multicol} %, booktabs, %% For landscape pages with figures/tables
 \usepackage{siunitx,mhchem} %for SI units and IUPAC naming
 %\usepackage{doi}
-\captionsetup[subfigure]{aboveskip=-0.1pt,belowskip=-0.1pt}
+\captionsetup[subfigure]{aboveskip=1pt,belowskip=1pt}
 \sisetup{detect-weight=true, detect-family=true, mode=text}
 \mhchemoptions{version=4}
 
-\usepackage{hyperref} % hyperlinks for references.
+\usepackage[hyphens]{url} % to break urls at hyphens
+\usepackage[breaklinks]{hyperref} % hyperlinks for references.
+
 %\definecolor{myCiteColor}{RGB}{68, 118, 102}
 %\usepackage[colorlinks=true,citecolor=myCiteColor]{hyperref}
 %\usepackage[hypertex]{hyperref} % hypertex is no longer required option
@@ -72,5 +80,4 @@
 %       \addtocontents{toc}{\protect\renewcommand{\protect\@chapapp}{\appendixname}}%
 % }
 % \makeatother
-
 

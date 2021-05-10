@@ -289,7 +289,8 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
   \vskip 1ex%
 %	\parbox[s]{0.8\textwidth}{ \centering
 %	\Large \bf \expandafter{\@title} \par \vskip 2ex}
-	\begin{tcolorbox}[sharp corners, 
+	\begin{tcolorbox}[sharp corners,
+		colback=white,
 		width=12cm,
 		%boxsep=1pt,
 		boxrule=1pt,
