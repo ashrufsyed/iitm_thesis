@@ -55,10 +55,18 @@
 %% 	Department of Aerospace Engineering
 %% 	IIT Madras, Chennai 600036, India
 %%	<ashrufsyed@smail.iitm.ac.in>  <ashrufsyed@gmail.com>
-%% 	Copyright (C) 2019-2020 Ashruf Syed
+%% 	Copyright (C) 2019-2021 Ashruf Syed
 
 
-% New Features :
+% New Features (2021)
+% 	- standardized the template in compliance with the new IITM format guidelines released in Feb 2021. Added relevant pages/licensing example wherever required
+%	- formatting guidelines included in a separate folder along with other proformas required while submitting your synopsis or thesis for convenience
+%	- option to include a visually appealing figure/image from your thesis on the title page of thesis
+%	- options for 'Blue' or 'Yellow' tape to represent the draft and approved reports on the title page of respective documents as per the new guidelines. Deafult is 'Black' for the final PhD thesis, along with 'NoColor' option for no color band if required
+%	- example code for usage of 'subcaption' package for placing multiple sub-figures
+%	- added IEEE bib style (in commented form below the iitm bibstyle optionin the present file) required in some departments
+
+% New Features (2020)
 % 	- removed obsolete options (compat2, hypertex) and to work with Tex 2019
 %	- added Dual Degree option for project report 
 %		(can be edited to use it for any course based degree like M.Sc., M.A., M.B.A)
@@ -75,13 +83,15 @@
 %	- added the sample CV and Committee pages at the end
 %
 % 	- added opensource licensing to the file for unambiguity in free usage and distribution
-%   - moved packages, commands, preamble and postamble of the thesis to 0_settings folder for simpler look
-%   - fixed various bugs in iitm.bst and added doi/arxiv link support for references
+% 	- moved packages, commands, preamble and postamble of the thesis to 0_settings folder for simpler look
+%   	- fixed various bugs in iitm.bst and added doi/arxiv link support for references
+
 
 %%%%%%%%%%%%%%%%%%%%     Licensing	  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License. 
 %% To view a copy of this license, visit: https://creativecommons.org/licenses/by-nc/4.0/
 
+%% So like any other piece of freely distributable code, this template and other files within this folder are provided "as is." There is no guarantee of any kind from the author
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
