@@ -61,7 +61,10 @@ IIT Madras, Chennai 600036, India
 <ashrufsyed@smail.iitm.ac.in> || <ashrufsyed@gmail.com>  
 Copyright (C) 2019-2021 Ashruf Syed
 
-## New Features added in 2021 version:
+## New Features added in Aug 2021 version:
+- compliance with the revised guidelines of Jul 2021
+
+## New Features added in May 2021 version:
 - compliance with the new format and guidelines of Feb 2021
 
 ## New Features added in 2020 version:

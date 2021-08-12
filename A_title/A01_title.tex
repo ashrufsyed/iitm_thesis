@@ -1,20 +1,30 @@
 % Title page
 % The title and author mentioned here will also be used in preparing the thesis certificate in the later page
 
-\title{A New and Improved \LaTeX\ Class for Dissertations Submitted to IIT~Madras}
+\makeatletter
+
+\title{A New and Improved \LaTeX\ Class for Dissertations Submitted to IIT~Madras} 
 %% Older capitlaized format
 %%% \title{A NEW AND IMPROVED \LaTeX\ CLASS FOR DISSERTATIONS SUBMITTED TO IITM}
 
-\author{Name}
+\author{Name} %\let\Author\@author
 
-\date{July 2021}
+\date{Sep 2021} 
 \department{AEROSPACE ENGINEERING}
 
+\makeatother
 
 %\nocite{*}
+%% Main title page
 \newgeometry{top=2cm, left=1.25in, right=1.27cm, bottom=1.5cm}
 \maketitle
 \restoregeometry
 
+%% Inside cover page (Same as title page but with copyright)
+\newgeometry{top=2cm, left=1.25in, right=1.27cm, bottom=1.5cm}
+\maketitlepagecprt
+\restoregeometry
+
 %% For inside cover page which has to be empty with no numbering
-\clearpage \mbox{} \thispagestyle{empty} \clearpage
+%% This is no longer required from 2021 as there is an inside cover page with copyright
+%\clearpage \mbox{} \thispagestyle{empty} \clearpage

@@ -1,0 +1,206 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The title page (main)
+
+\def\maketitle{ 
+%<*tag>
+  \pagenumbering{roman}
+  \thispagestyle{empty}
+  \newpage
+  \null
+  \setcounter{page}{1}
+  \parskip=0pt
+  
+  %%%  New format to include color band on the left margin  %%%%
+%  \if@MS
+%  	\if@NoColor
+%  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+%  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+%  	\else
+%  	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+%  	\color{msfnl}\rule{1.25in}{\paperheight}}}
+%  	\fi
+%  \fi
+  \if@PhD
+  	\if@NoColor
+  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+  	\else
+  	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  	\color{phdfnl}\rule{1.25in}{\paperheight}}}
+  	\fi
+  \fi
+  \if@Synopsis
+  	\if@NoColor
+    	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+  	\else
+  		\if@BlueTape
+    		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+			\color{blutape}\rule{1.25in}{\paperheight}}}
+		\fi
+		\if@YellowTape
+	    	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+			\color{ylwtape}\rule{1.25in}{\paperheight}}}
+		\fi
+	\fi
+  \else
+   \if@NoColor
+   		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+   		\color{nocolor}\rule{1.25in}{\paperheight}}}
+   \else
+   		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+   		\color{phdfnl}\rule{1.25in}{\paperheight}}}
+   \fi
+  \fi
+  \if@MS
+  	\if@NoColor
+  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  		\color{nocolor}\rule{1.25in}{\paperheight}}}
+  	\else
+  		\if@YellowTape
+  			\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  			\color{ylwtape}\rule{1.25in}{\paperheight}}}
+  		\else
+  			\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+  			\color{msfnl}\rule{1.25in}{\paperheight}}}
+  		\fi
+  	\fi
+  \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%   The title page content starts here   %%%%%%%%%%%
+\noindent
+\hskip 4ex
+\begin{minipage}[t]{0.21\textwidth}
+	 \centering\raisebox{\dimexpr \topskip-\height+2ex}{%
+		\includegraphics[width=\textwidth]{iitmlogo}}
+\end{minipage} \hfill
+\begin{minipage}[t]{0.45\textwidth}
+	\begin{singlespace}
+		\raggedright
+		\nohyphens{\normalsize DEPARTMENT OF \@department\par
+		INDIAN INSTITUTE OF TECHNOLOGY \\MADRAS\\ 
+		CHENNAI - 600036}
+	\end{singlespace}
+\end{minipage}
+
+%%%  Solid line after the letter head 
+\vskip 2ex%
+\noindent
+\rule{17.7cm}{0.8mm}
+  
+  \vspace{0.3cm}
+
+  \begin{center}%
+  \let \footnote \thanks
+  \vglue 0in % this makes top margin 2in
+  \vskip 1ex%
+%	\parbox[s]{0.8\textwidth}{ \centering
+%	\Large \bf \expandafter{\@title} \par \vskip 2ex}
+	\begin{tcolorbox}[sharp corners,
+		colback=white,
+		width=12cm,
+		%boxsep=1pt,
+		boxrule=0pt,  % boxrule=1pt, % No box required as per guidelines
+		left=1pt,
+		right=1pt,
+		top=2pt,]
+		\centering \nohyphens{\Large \bf \expandafter{\@title}}
+	\end{tcolorbox}
+	\vskip 2ex
+  	\if@Synopsis
+		\par
+	\else
+		\IfFileExists{titleImage.png}{\centerline{\includegraphics[height=7cm]{titleImage}}}{\par}
+	\fi
+    \if@Synopsis
+		\vskip 15ex%
+	\else
+		\IfFileExists{titleImage.png}{\vskip 4ex}{\vskip 15ex}%
+	\fi
+    {\normalsize
+      \if@PhD
+         {\em A Thesis }\par
+         \if@Synopsis
+            {\normalsize \em To be submitted by \par}
+         \else
+            {\normalsize \em Submitted by \par}
+         \fi
+         {\bf \normalsize \MakeUppercase{\@author}\par\par}
+         \if@Synopsis
+         	\vskip 15ex%
+         \else
+         	\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
+         \fi
+         {\em For the award of the degree }\par
+         {\em Of} \par
+         {\bf \normalsize \MakeUppercase{Doctor of Philosophy}} \par
+       \else
+         \if@MS
+         {\em A Thesis }\par
+			\if@Synopsis
+				{\normalsize \em To be submitted by \par}
+			\else
+				{\normalsize \em Submitted by \par}
+			\fi
+		 {\bf \normalsize \MakeUppercase{\@author}\par\par}
+         \if@Synopsis
+         	\vskip 15ex%
+         \else
+         	\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
+         \fi
+		 {\em For the award of the degree }\par
+		 {\em Of} \par
+%         {\bf \normalsize \MakeUppercase{Master of Science} \par
+%            (by Research) \par}
+		 {\bf \normalsize \MakeUppercase{Master of Science} by \par
+        	by Research \par}
+       \else
+       	 \if@DD
+       		{\em A Project Report }\par
+       		{\normalsize \em Submitted by \par}
+       		{\bf \normalsize \MakeUppercase{\@author}\par\par}
+       		\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
+       		{\normalsize \em In the partial fulfilment of requirements\par
+       			For the award of the \par}
+       		{\bf \normalsize \MakeUppercase{Dual Degree} (B.Tech. and M.Tech.)} \par
+%		% Uncomment below lines for specialization
+%                {\normalsize \em with specialization in \par}
+%			{\bf \normalsize Applied Mechanics with Biomedical Engineering \par\par}
+       	\else
+           {\em A Project Report }\par
+           {\normalsize \em Submitted by \par}
+           {\bf \normalsize \MakeUppercase{\@author}\par\par}
+           \IfFileExists{titleImage.png}{\vskip 4ex}{\vskip 15ex}%
+           {\normalsize \em In the partial fulfilment of requirements\par
+             For the award of the degree \par}
+           {\em Of} \par
+           \if@MTech
+              {\bf \normalsize \MakeUppercase{Master of Technology}} \par
+           \fi
+           \if@MA
+              {\bf \normalsize \MakeUppercase{Master of Arts}} \par
+           \fi
+           \if@MBA
+           	  {\bf \normalsize \MakeUppercase{Master of Business Administration}} \par
+           \fi
+           \if@MSc
+              {\bf \normalsize \MakeUppercase{Master of Science}} \par
+           \fi
+           \if@BTech
+              {\bf \normalsize \MakeUppercase{Bachelor of Technology}} \par
+           \fi
+          \fi
+         \fi
+      \fi
+    }
+	\if@Synopsis
+		\par
+  	\else 
+  		{\normalsize \@date}
+  	\fi
+  \end{center}%
+%</tag>
+}
+%%%%%%%%%%%%%%%   Title page content ends here   %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,71 @@
+%%%  Proformas to be submitted during synopsis/thesis
+% Contributed by: Shashank Dubey (MS Scholar, IIT Madras)
+
+%how to use:
+%To work on synopsis go to the synopsis.tex page and compile it. MS and PhD title pages are different. Set the documentclass option to MS or PhD as per the requirement as shown below. For thesis, compile thesis.tex.
+%Note the comment on the first page to create the synopsis, and delete those comments later.
+%Also note the content in synopsis is within the single spacing 
+%for verification please refer to the latest guidelines as per insti available at https://academic.iitm.ac.in/getpdf.php?id=422 
+
+%\documentclass[MS,Synopsis]{iitmdiss}%Synopsis is not used in this template.
+%\documentclass[MS]{iitmdiss}
+\documentclass[PhD]{iitmdiss} 
+%\documentclass[12pt]{iitmdiss}
+\usepackage{times}
+\usepackage{t1enc}
+
+\usepackage{graphicx}
+\usepackage{hyperref} % hyperlinks for references.
+\usepackage{amsmath} % easier math formulae, align, subequations \ldots
+\usepackage{afterpage}
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
+\usepackage{tikz}
+\usepackage{booktabs,multirow,tabularx}
+\usepackage{anyfontsize}
+
+\usepackage{titlesec}
+
+\usepackage{setspace}
+
+
+\titleformat{\section}%removed \thesection from the empty bracket below to make section no. disappear
+{\vspace{1.2em}\normalfont\fontsize{12}{0em}\bfseries}{}{-0.1em}{\vspace{-0.6cm} \MakeUppercase}
+
+\titleformat{\subsection}%removed \thesubsection from the empty bracket below to make subsection no. disappear
+{\vspace{1.2em}\normalfont\fontsize{12}{0em}\bfseries}{}{-0.1em}{\vspace{-0.5cm}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.2em}
+
+\setstretch{2.0}
+
+%---------------------------------
+%to avoid hyphenation in text
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\sloppy
+%to avoid hyphenation in text
+%---------------------------------
+
+\begin{document}
+\begin{singlespacing}
+	
+\newpage
+\input{Proformas/forwardingNote}
+
+\newpage
+\input{Proformas/plagiarism}
+
+\newpage
+\input{Proformas/declaration}
+
+\end{singlespacing}
+\end{document}

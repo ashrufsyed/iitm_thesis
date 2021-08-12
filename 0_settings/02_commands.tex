@@ -28,6 +28,16 @@
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
 
+%---------------------------------
+%to avoid hyphenation in text
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\sloppy % To avoid zigzagged text after hyphenation
+%---------------------------------
+
 %==============================================================================
 
 \newcommand{\cref}[1]{(\ref{#1})}

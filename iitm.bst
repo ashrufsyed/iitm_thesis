@@ -49,6 +49,20 @@
  %   \citeauthor{key} ==>>           Jones et al.
  %   \citeauthor*{key} ==>>          Jones, Baker, and Smith
  %   \citeyear{key} ==>>             1990
+ %
+ % New Features added:
+ % - corrected bug related to citing books
+ % - added new templates for technical reports to separate it from general non-tech reports
+ % - added functionality to show doi/arxiv links if they are available
+ % - enable weblinks only if there are no doi/arxiv values to reduce the size of bibliography
+ %
+ %   New Features contributed by:
+ %
+ %   Ashruf Syed
+ %   Department of Aerospace Engineering
+ %   IIT Madras, Chennai 600036, India
+ %   ashrufsyed@gmail.com
+ %   Copyright (C) 2019-2021 Ashruf Syed
  %---------------------------------------------------------------------
 
 ENTRY

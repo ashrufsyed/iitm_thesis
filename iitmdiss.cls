@@ -56,9 +56,15 @@
 %% 	IIT Madras, Chennai 600036, India
 %%	<ashrufsyed@smail.iitm.ac.in>  <ashrufsyed@gmail.com>
 %% 	Copyright (C) 2019-2021 Ashruf Syed
-
-
-% New Features (2021)
+% 
+% New Features (Aug 2021)
+% 	- standardized with the revised guidelines of July 2021
+% 	- added copyright page as inside cover page (it makes use of titlePage.tex)
+% 	- 'proformas' template has been added (thanks to Shashank for making the template)
+% 	- spacing between chapter name and the start of the text has been reduced (Aug 2021 compliance)
+% 
+% 
+% New Features (Feb 2021)
 % 	- standardized the template in compliance with the new IITM format guidelines released in Feb 2021. Added relevant pages/licensing example wherever required
 %	- formatting guidelines included in a separate folder along with other proformas required while submitting your synopsis or thesis for convenience
 %	- option to include a visually appealing figure/image from your thesis on the title page of thesis
@@ -102,6 +108,7 @@
 \newif\if@MS
 \newif\if@MTech
 \newif\if@DD
+\newif\if@MA
 \newif\if@MBA
 \newif\if@MSc
 \newif\if@BTech
@@ -116,6 +123,7 @@
 \DeclareOption{MS}{\@MStrue}
 \DeclareOption{MTech}{\@MTechtrue}
 \DeclareOption{DD}{\@DDtrue}
+\DeclareOption{MA}{\@MAtrue}
 \DeclareOption{MBA}{\@MBAtrue}
 \DeclareOption{MSc}{\@MSctrue}
 \DeclareOption{BTech}{\@BTechtrue}
@@ -124,7 +132,11 @@
 \DeclareOption{NoColor}{\@NoColortrue}
 \DeclareOption{BlueTape}{\@BlueTapetrue}
 \DeclareOption{YellowTape}{\@YellowTapetrue}
+
 \ProcessOptions\relax
+
+%% Definition of Programmes for global usage
+%\if@PhD	\gdef\Progme{PhD} \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Load the correct class.
@@ -141,10 +153,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Geometry and page layout
 \RequirePackage[a4paper,left=1.25in,right=1.25in,top=1in,bottom=0.67in,
-nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
+nohead,includefoot,footskip=0.67in]{geometry}[2018/09/20]
 %\RequirePackage[compat2,a4paper,left=1.5in,right=1in,top=1in,bottom=0.667in,
 %                nohead]{geometry}[2002/07/08] %% compat2 is obsolete
-\parskip 8pt
+\parskip 8pt %8pt 
+\setlength{\parindent}{0pt} %To start any paragraph with no indentation
 %\setlength{\footskip}{10pt}  % Added for page number adjustment without compat2
 
 \renewcommand{\@pnumwidth}{2.5em}
@@ -157,11 +170,17 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
 \definecolor{ylwtape}{RGB}{255,255,0}
 \definecolor{msfnl}{RGB}{0,176,240}
 \definecolor{phdfnl}{RGB}{0,0,0}
+\definecolor{other}{RGB}{230,230,250} % Sample color band for course degrees
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Using setspace to do the single/double spacing.  Setspace also
 %% makes all tables and figures have single spacing automatically.
 \RequirePackage{setspace} 
+
+%% Tag utility to re-use only certain parts of the latex code from a given file
+%% Used for duplicating titlePage code for generating copyright page
+\RequirePackage{catchfilebetweentags} 
+
 \RequirePackage{atbeginend} % used to redefine the list environs
 \setstretch{1.5}
 
@@ -182,7 +201,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
 % natbib allows easy switching of citation style and using it along
 % with the iitm.bst makes things perfect.
 \RequirePackage[authoryear,round]{natbib} 
-%\RequirePackage[numbers,square]{natbib} 
+%\RequirePackage[numbers,square]{natbib}  % For IEEE like format with numbered citation
 \bibliographystyle{iitm}
 
 \newcommand{\bibstyle@iitm}{\bibpunct{(}{)}{;}{a}{,}{,}%
@@ -201,221 +220,38 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
 
 %\RequirePackage[dvips]{graphicx}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The title page
-
-\def\maketitle{%
-  \pagenumbering{roman}
-  \thispagestyle{empty}
-  \newpage
-  \null
-  \setcounter{page}{1}
-  \parskip=0pt
-  
-  %%%  New format to include color band on the left margin  %%%%
-%  \if@MS
-%  	\if@NoColor
-%  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-%  		\color{nocolor}\rule{1.25in}{\paperheight}}}
-%  	\else
-%  	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-%  	\color{msfnl}\rule{1.25in}{\paperheight}}}
-%  	\fi
-%  \fi
-  \if@PhD
-  	\if@NoColor
-  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-  		\color{nocolor}\rule{1.25in}{\paperheight}}}
-  	\else
-  	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-  	\color{phdfnl}\rule{1.25in}{\paperheight}}}
-  	\fi
-  \fi
-  \if@Synopsis
-  	\if@NoColor
-    	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-  		\color{nocolor}\rule{1.25in}{\paperheight}}}
-  	\else
-  		\if@BlueTape
-    		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-			\color{blutape}\rule{1.25in}{\paperheight}}}
-		\fi
-		\if@YellowTape
-	    	\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-			\color{ylwtape}\rule{1.25in}{\paperheight}}}
-		\fi
-	\fi
-  \else
-   \if@NoColor
-   		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-   		\color{nocolor}\rule{1.25in}{\paperheight}}}
-   \else
-   		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-   		\color{phdfnl}\rule{1.25in}{\paperheight}}}
-   \fi
-  \fi
-  \if@MS
-  	\if@NoColor
-  		\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-  		\color{nocolor}\rule{1.25in}{\paperheight}}}
-  	\else
-  		\if@YellowTape
-  			\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-  			\color{ylwtape}\rule{1.25in}{\paperheight}}}
-  		\else
-  			\AddToShipoutPictureBG*{\AtPageLowerLeft{%
-  			\color{msfnl}\rule{1.25in}{\paperheight}}}
-  		\fi
-  	\fi
-  \fi
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%   The title page content starts here   %%%%%%%%%%%
-\noindent
-\hskip 4ex
-\begin{minipage}[t]{0.21\textwidth}
-	 \centering\raisebox{\dimexpr \topskip-\height+2ex}{%
-		\includegraphics[width=\textwidth]{iitmlogo}}
-\end{minipage} \hfill
-\begin{minipage}[t]{0.45\textwidth}
-	\begin{singlespace}
-		\raggedright
-		\nohyphens{\normalsize DEPARTMENT OF \@department\par
-		INDIAN INSTITUTE OF TECHNOLOGY \\MADRAS\\ 
-		CHENNAI - 600036}
-	\end{singlespace}
-\end{minipage}
-
-%%%  Solid line after the letter head 
-\vskip 2ex%
-\noindent
-\rule{17.7cm}{0.8mm}
-  
-  \vspace{0.3cm}
-
-  \begin{center}%
-  \let \footnote \thanks
-  \vglue 0in % this makes top margin 2in
-  \vskip 1ex%
-%	\parbox[s]{0.8\textwidth}{ \centering
-%	\Large \bf \expandafter{\@title} \par \vskip 2ex}
-	\begin{tcolorbox}[sharp corners,
-		colback=white,
-		width=12cm,
-		%boxsep=1pt,
-		boxrule=1pt,
-		left=1pt,
-		right=1pt,
-		top=2pt,]
-		\centering \nohyphens{\Large \bf \expandafter{\@title}}
-	\end{tcolorbox}
-	\vskip 2ex
-  	\if@Synopsis
-		\par
-	\else
-		\IfFileExists{titleImage.png}{\centerline{\includegraphics[height=7cm]{titleImage}}}{\par}
-	\fi
-    \if@Synopsis
-		\vskip 15ex%
-	\else
-		\IfFileExists{titleImage.png}{\vskip 4ex}{\vskip 15ex}%
-	\fi
-    {\normalsize
-      \if@PhD
-         {\em A Thesis }\par
-         \if@Synopsis
-            {\normalsize \em To be submitted by \par}
-         \else
-            {\normalsize \em Submitted by \par}
-         \fi
-         {\bf \normalsize \MakeUppercase{\@author}\par\par}
-         \if@Synopsis
-         	\vskip 15ex%
-         \else
-         	\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
-         \fi
-         {\em For the award of the degree }\par
-         {\em Of} \par
-         {\bf \normalsize \MakeUppercase{Doctor of Philosophy}} \par
-       \else
-         \if@MS
-         {\em A Thesis }\par
-			\if@Synopsis
-				{\normalsize \em To be submitted by \par}
-			\else
-				{\normalsize \em Submitted by \par}
-			\fi
-		 {\bf \normalsize \MakeUppercase{\@author}\par\par}
-         \if@Synopsis
-         	\vskip 15ex%
-         \else
-         	\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
-         \fi
-		 {\em For the award of the degree }\par
-		 {\em Of} \par
-         {\bf \normalsize \MakeUppercase{Master of Science} \par
-            (by Research) \par}
-       \else
-       	 \if@DD
-       		{\em A Project Report }\par
-       		{\normalsize \em Submitted by \par}
-       		{\bf \normalsize \MakeUppercase{\@author}\par\par}
-       		\IfFileExists{titleImage.png}{\vskip 7ex}{\vskip 15ex}%
-       		{\normalsize \em In the partial fulfilment of requirements\par
-       			For the award of the \par}
-       		{\bf \normalsize \MakeUppercase{Dual Degree} (B.Tech. and M.Tech.)} \par
-		% Uncomment below lines for specialization
-                {\normalsize \em with specialization in \par}
-			{\bf \normalsize Applied Mechanics with Biomedical Engineering \par\par}
-       	\else
-           {\em A Project Report }\par
-           {\normalsize \em Submitted by \par}
-           {\bf \normalsize \MakeUppercase{\@author}\par\par}
-           \IfFileExists{titleImage.png}{\vskip 4ex}{\vskip 15ex}%
-           {\normalsize \em In the partial fulfilment of requirements\par
-             For the award of the degree \par}
-           {\em Of} \par
-           \if@MTech
-              {\bf \normalsize \MakeUppercase{Master of Technology}} \par
-           \fi
-           \if@MBA
-           	  {\bf \normalsize \MakeUppercase{Master of Business Administration}} \par
-           \fi
-           \if@MSc
-              {\bf \normalsize \MakeUppercase{Master of Science}} \par
-           \fi
-           \if@BTech
-              {\bf \normalsize \MakeUppercase{Bachelor of Technology}} \par
-           \fi
-          \fi
-         \fi
-      \fi
-    }
-	\if@Synopsis
-		\par
-  	\else 
-  		{\normalsize \@date}
-  	\fi
-  \end{center}%
-}
-%%%%%%%%%%%%%%%   Title page content ends here   %%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%% Title page (main)
+\input{titlePage.tex}
 \def\titlepage{\newpage\thispagestyle{empty}\c@page\z@}
 \def\endtitlepage{\newpage}
 
+%% Title page (copyright)
+\newcommand{\maketitlepagecprt}{{
+	% \input{titlePageCprt}
+	%% -------------------------------------------
+	%% Using tag utility to re-use part of the code from titlePage.tex
+	\ExecuteMetaData[titlePage.tex]{tag} 
+	%%%%   Copyright and year at the bottom		%%%%%%%%%%%%
+	\vfill
+	\raggedbottom
+	\noindent
+	%\vskip 2ex
+	\hskip 4ex 
+	\copyright \hskip 0.3ex 
+	2021 Indian Institute of Technology Madras
+}}
 
 \if@Synopsis
 %   \renewcommand\refname{REFERENCES}
 \else
-   % QUOTATIONS
+   % QUOTATIONS (Optional)
    %
    \def\quotations{\chapter*{\centerline{QUOTATIONS}}
    	 \thispagestyle{empty}
    %\addcontentsline{toc}{chapter}{QUOTATIONS}
    }
 
-   % DEDICATION
+   % DEDICATION (Optional)
    %
    \def\dedication{\chapter*{\centerline{DEDICATION}}
    	 \thispagestyle{empty}
@@ -428,7 +264,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
    %     comment the following lines out to get it working.
    %
    \if@PhD
-   \def\certificate{\chapter*{\centerline{THESIS CERTIFICATE}}%% A preliminary chapter
+   \def\certificate{\chapter*{\centerline{ \underline{THESIS CERTIFICATE} }}%% A preliminary chapter
      %\vspace*{36pt}
      %\centerline{\Large \bf THESIS CERTIFICATE}
      \vskip 10pt
@@ -438,12 +274,12 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
    }
    \else
    \if@MS
-	\def\certificate{\chapter*{\centerline{THESIS CERTIFICATE}}%% A preliminary chapter
+	\def\certificate{\chapter*{\centerline{ \underline{THESIS CERTIFICATE} }}%% A preliminary chapter
 	\vskip 10pt
 	\thispagestyle{empty}
 	}
    \else
-   \def\certificate{\chapter*{\centerline{CERTIFICATE}}%% A preliminary chapter
+   \def\certificate{\chapter*{\centerline{ \underline{CERTIFICATE} }}%% A preliminary chapter
 	\vskip 10pt
 	\thispagestyle{empty}
 	}
@@ -466,7 +302,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
    %
    \def\acknowledgements{\chapter*{\centerline{ACKNOWLEDGEMENTS}}
      \addcontentsline{toc}{chapter}{ACKNOWLEDGEMENTS}
-     \setcounter{page}{1}
+     \setcounter{page}{1}  %Start page numbering from acknowledgements
    }
 
    % ABSTRACT
@@ -495,7 +331,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
 
    % Use the nomencl package for the NOTATION section.
 
-   % Makes the chapter heading
+   % Makes the chapter heading for main chapters/appendices
    \def\@makechapterhead#1{%
      {\parindent \z@ \raggedright \normalfont
        \ifnum \c@secnumdepth >\m@ne
@@ -503,25 +339,26 @@ nohead,includefoot,footskip=0.67in]{geometry}[2018/05/13]
          \Large\bfseries \@chapapp\space \thechapter
        \end{center}
        \par\nobreak
-       \vskip 20\p@
+       \vspace*{-0.7cm} % \vskip 20\p@  %% Sp
        \fi
        \interlinepenalty\@M
        \Large \bf
        \begin{center}
          #1\par\nobreak      
        \end{center}
-       \vskip 20\p@
+       \vskip 20\p@ %20\p@ % triple spacing between the chapter title and the first line of the chapter
        \thispagestyle{empty}
      }}
 
-   % Makes the chapter heading for \chapter* commands
+   % Makes the chapter heading for \chapter* (other than main chapters and appendices)
    \def\@makeschapterhead#1{%
-     \vspace*{25\p@}%
+     % \vspace*{25\p@} %\vspace*{25\p@}%
      {\parindent \z@ \raggedright
        \normalfont
        \interlinepenalty\@M
        \Large \bfseries #1\par\nobreak
-       \vskip 20\p@
+       \vskip 30\p@ %20\p@
+       %\vspace*{-0.7cm}
      }}
 
    
