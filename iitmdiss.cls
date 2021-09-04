@@ -153,11 +153,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Geometry and page layout
 \RequirePackage[a4paper,left=1.25in,right=1.25in,top=1in,bottom=0.67in,
-nohead,includefoot,footskip=0.67in]{geometry}[2018/09/20]
+nohead,includefoot,footskip=0.67in]{geometry}[2019/09/20]
 %\RequirePackage[compat2,a4paper,left=1.5in,right=1in,top=1in,bottom=0.667in,
 %                nohead]{geometry}[2002/07/08] %% compat2 is obsolete
 \parskip 8pt %8pt 
-\setlength{\parindent}{0pt} %To start any paragraph with no indentation
+\setlength{\parindent}{0pt} %To start any paragraph with no indentation - Comment this line if you want indentation on each paragraph
 %\setlength{\footskip}{10pt}  % Added for page number adjustment without compat2
 
 \renewcommand{\@pnumwidth}{2.5em}

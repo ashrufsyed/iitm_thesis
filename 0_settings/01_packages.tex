@@ -29,7 +29,8 @@
 %% Captions, SI units and IUPAC naming
 \usepackage{caption,subcaption,rotating,pdflscape,float}
 %\usepackage{lscape,multirow,multicol} %, booktabs, %% For landscape pages with figures/tables
-\usepackage{siunitx,mhchem} %for SI units and IUPAC naming
+\usepackage{siunitx} %for SI units and 
+\usepackage[version=4]{mhchem} %For IUPAC naming
 %\usepackage{doi}
 \captionsetup[subfigure]{aboveskip=1pt,belowskip=1pt}
 \sisetup{detect-weight=true, detect-family=true, mode=text}
@@ -37,17 +38,16 @@
 
 \usepackage[hyphens]{url} % to break urls at hyphens
 \usepackage[breaklinks]{hyperref} % hyperlinks for references.
+%\usepackage[hidelinks]{hyperref} %hidelinks to remove boxes around hyperlinks
 
 %\definecolor{myCiteColor}{RGB}{68, 118, 102}
 %\usepackage[colorlinks=true,citecolor=myCiteColor]{hyperref}
 %\usepackage[hypertex]{hyperref} % hypertex is no longer required option
-%\usepackage[hidelinks]{hyperref} %hidelinks to remove boxes around hyperlinks
 
 
 %% Optional packages for nomencl, lineno and TOC links for every page
 %\usepackage{nomencl,lineno}
 \usepackage{listings}
-
 
 \usepackage{titletoc}
 %% Optional packages for nomencl, lineno and TOC links for every page

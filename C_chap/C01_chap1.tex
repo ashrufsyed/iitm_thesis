@@ -2,17 +2,27 @@
 %\chapter[short entry]{long title}
 \label{chap:intro}
 
-This document provides a simple template of how the provided \verb+iitmdiss.cls+ \LaTeX\ class is to be used.  Also provided are several valuable tips for doing various things that might be useful when
-writing your thesis. I have standardized the template in compliance with the new format guidelines released in Feb 2021. The source code is present on my Github page \citep{SyedGit2021}, which can help cite the contribution of this work and raise any issues or bugs encountered within this template.
+This document provides a simple template of how the provided \verb+iitmdiss.cls+ \LaTeX\ class is to be used.  Also provided are several valuable tips for doing various things that might be useful when writing your thesis. The source code is present on my Github page \citep{SyedGit2021}, which can help cite the contribution of this work and raise any issues or bugs encountered within this template.
 
-Before reading any further, please note that you are strongly advised against changing any of the formatting options used in the class provided in this directory unless you are absolutely sure that it
-does not violate the IITM formatting guidelines.  \emph{Please do not change the margins or the spacing.}   Despite these warnings, if you do change the formatting, you are on your own (do not blame me if you need to reprint your entire
+\section{Template Version, Formatting Guidelines and Compliance}
+I have standardized the template in compliance with the new format guidelines released in Feb 2021, and later with the updated guidelines of July 2021. Please cross-check these with the IITM academic website. 
+
+Before reading any further, please note that you are strongly advised against changing any of the formatting options used in the class provided in this directory unless you are absolutely sure that it does not violate the IITM formatting guidelines.  \emph{Please do not change the margins or the spacing.}   Despite these warnings, if you do change the formatting, you are on your own (do not blame me if you need to reprint your entire
 thesis). The least I ask is that you do not redistribute your style/class files to your friends (or enemies). 
 
+\subsection{Licensing and Responsibility}
 Also, since we are talking about the responsibility here, like any other piece of freely distributable code, this template and other files within this folder are provided "as is." There is no guarantee of any kind from the author. In short, that means it is your personal responsibility to make sure the template is compliant with the guidelines, and I cannot be held responsible.
 
 It is also a good idea to take a quick look at the formatting guidelines. In fact, I would strongly suggest you go through them even before you venture into the present template. They are included in a separate folder along with other proformas required while submitting your synopsis or thesis for convenience. Also, your office or advisor should have a copy of these guidelines with them. If they do not, pester them, as they really should have the latest formatting guidelines readily available somewhere. 
 
+\section{Basic User Guide}
+
+\subsection{Structure of the Template}
+The files provided serves as a minimal templates to start formating your synopsis, proformas, thesis or individual chapters. Of these, only \verb+synopsis.tex+ is a single tex file. All other templates have sub-folders and sub-files attached to them for ease-of-usage and to catch errors during \TeX compilation and debugging.
+
+For \verb+thesis.tex+, there are five sub-folders of which \verb+C_chap+ and \verb+D_appx+ handle contents of your thesis. The rest of the sub-folders are meant to format and create different types of thesis pages that include cover pages, tables of content, CV etc. Please go through each of these sub-folders and sub-files starting from the main file \verb+thesis.tex+ and down the file hierarchy for a better understanding before using the template.
+
+\subsection{Compilation}
 To compile your sources, run the following from the command line:
 \begin{verbatim}
 % latex thesis.tex
@@ -20,35 +30,44 @@ To compile your sources, run the following from the command line:
 % latex thesis.tex
 % latex thesis.tex
 \end{verbatim}
-Modify this suitably for your sources. Alternatively, you can use standard \TeX environments like \TeX Studio, \TeX Maker, etc., to make this process much simpler.
 
-To generate PDFs with the links from the \verb+hyperref+ package, use the following command:
+Modify this suitably for your sources. To generate PDFs with the links from the \verb+hyperref+ package, use the following command:
 \begin{verbatim}
 % dvipdfm -o thesis.pdf thesis.dvi
 \end{verbatim}
+You can also use pdflatex to generate the PDF file directly from terminal
 
-\section{Package Options}
+Alternatively, you can use standard \TeX environments like \TeX Studio, \TeX Maker, etc., to make this process much simpler with just click-based compilation/re-compilation.
 
-This file serves as a minimal template to start formating your thesis. The \verb+iitmdiss+ class can be used by simply using something like this:
+\subsection{Basic Options}
+The files provided serve as a minimal template to start formating your synopsis, thesis, proformas and individual chapters. The \verb+iitmdiss+ class can be used by simply with the following lines in your \TeX file:
+
 \begin{verbatim}
 \documentclass[PhD]{iitmdiss}  
 \end{verbatim}
 
+\subsubsection{Print Form}
 For getting a print form of the same thesis, with the chapters starting on the right side, and appropriate blank pages wherever necessary, add the option \verb+PrntForm+ like:
 \begin{verbatim}
 \documentclass[PhD,PrntForm]{iitmdiss}  
 \end{verbatim}
 
-There are also default color bars on the title page in the new format. For the Ph.D. thesis, the default would be black, and for the MS thesis, it is cyan-blue. As for other programmes, there have not been any specific guidelines for making the title page, so black has been set as default. There is also 'NoColor' option you can give not to print this color bar.
+\subsubsection{Color Bar option}
+There are also default color bars on the left side of title page in the new format. For the Ph.D. thesis, the default would be black, and for the MS thesis, it is cyan-blue. As for other programmes, there have not been any specific guidelines for making the title page, so black has been set as default. There is also 'NoColor' option you can give not to print this color bar.
 
 \begin{verbatim}
 \documentclass[PhD,PrntForm,NoColor]{iitmdiss}  
 \end{verbatim}
 
+\subsubsection{Degree option}
 To change the title page for different degrees just change the option from \verb+PhD+ to one of \verb+MS+, \verb+MTech+, \verb+DD+, \verb+MBA+, \verb+MSc+ or \verb+BTech+. The other specific degrees are not supported yet. However, they should be quite easy to add if you look at the code used to generate the above degree pages in \verb+iitmdiss.cls+ file.  The title page formatting depends on how large or small your thesis title is.  Consequently, it might require some hand-tuning.  Edit the options in the \verb+iitmdiss.cls+ file for it to suitably do this. I recommend doing this as a first step once your title is final.
 
-The new format has an option to include a visually appealing figure/image from your thesis. I have given the file name as \verb+titleImage.png+ for this sample image from my work. So if you are planning to use it, place that image file in png format with the main folder and rename it as \verb+titleImage.png+. Nevertheless, if you are not happy with this concept and want to include custom image formats or the file name of your image/figure, I would suggest editing the \verb+iitmdiss.cls+. You should be comfortable in \LaTeX code for doing so. Look for \verb+titleImage+ string, and start editing there.
+\subsubsection{Cover Image}
+The new format has an option to include a visually appealing figure/image from your thesis. I have given the file name as \verb+titleImage.png+ for this sample image from my work. So if you are planning to use it, place that image file in png format with the main folder and rename it as \verb+titleImage.png+. 
 
+Nevertheless, if you are not happy with this concept and want to include custom image formats or the file name of your image/figure, I would suggest editing the \verb+iitmdiss.cls+. You should be comfortable in \LaTeX code for doing so. Look for \verb+titleImage+ string, and start editing there.
+
+\subsubsection{Synopsis option and Color bar}
 To write a synopsis, use the \verb+synopsis.tex+ file as a simple template. The synopsis option turns this on and can be used as shown below:
 \begin{verbatim}
 \documentclass[PhD,synopsis]{iitmdiss}                                
@@ -61,13 +80,19 @@ For synopsis, the concept of 'Blue' or 'Yellow' tape to represent the draft and 
 
 Like the thesis, there is a 'NoColor' option for the synopsis, but it will not be that useful. Also, the default option gives a black color bar.
 
-Suppose you want to modify the spacing between the lines/text of the title page. In that case, it can be quickly done by editing the class file if you are familiar with \LaTeX and requiring some minor fine-tuning.
+\subsubsection{Line Spacing and Indentation}
+All the text formating is based on the institute guidelines with double spacing (except for pointers, footnote or endnote) and no indentation of paragraphs. So please do not modify them to make your paragraphs small or large. 
 
+Suppose you want to modify the spacing between the lines/text of the title page (and inside cover page) which is sometimes needed, and if you are familiar with \LaTeX, you can modify it by editing the \verb+titlePage.tex+ file in the main folder. Most of time it requires some minor fine-tuning.
 
+\subsubsection{Hyperlinks and Color boxes}
 This sample file uses the \verb+hyperref+ package that makes all labels and references clickable in both the generated DVI and PDF files.  These are very useful when reading the document online and do not affect the output when the files are printed.
+
+The color boxes that appear on the hyperlinks are visible only in the Tex environment or if you're using a Linux system. If you try to open it in PDF applications on Windows like Adobe Reader, those color boxes won't show up. Nonetheless, if you want just the hyperlinks without those boxes, you can edit the \verb+01_packages.tex+ file from the \verb+0_settings+ folder. Search for the line with the \verb+hypertex+ package, and add the \verb+hidelinks+ option. So the line would become: \verb+\usepackage[breaklinks,hidelinks]{hyperref}+.
 
 \section{Example Figures and Tables}
 
+\subsection{Sample Figure and Sub-figure}
 Figure~\ref{fig:iitm} shows a simple figure with sub-figures and sub-captions for illustration along with a long caption using \verb+subcaption+ package.  A sample commented code using \verb|resizebox| has also been given if you prefer to use that instead. Either way, the formatting of caption text is automatically single-spaced and indented.
 
 %%%  Sample figure-subfigure using 'resizebox' package
@@ -110,6 +135,8 @@ Figure~\ref{fig:iitm} shows a simple figure with sub-figures and sub-captions fo
 
 In the new format, emphasis has been made on the proper copyright compliance when reusing figures/images/tables from other authors and sources. Appropriate attributions and usage policies have to be included within the thesis certificate page. An example has been provided for using the IIT Madras logo as a sample figure in the present template.
 
+\subsection{Sample Table}
+
 Table~\ref{tab:sample} shows a sample table with the caption placed correctly. The caption for this should always be placed before the table, as shown in the example. Like figure captions, the text is automatically single-spaced and indented.
 
 \begin{table}[htbp]
@@ -132,12 +159,13 @@ Table~\ref{tab:sample} shows a sample table with the caption placed correctly. T
 
 \section{Bibliography with BIB\TeX}
 
-I strongly recommend that you use BIB\TeX\ to generate your bibliography automatically.  It makes managing your references much more effortless.  It is an excellent way to organize your references and reuse them.  You can use one set of entries for your references and cite them in your thesis, papers, and reports.  If you have not used it anytime before, please invest some time learning how to use it. Also, you can use reference
-managers like Mendeley, Zotero, EndNote, etc., to import this bib-formatted library with all your references. It makes the citation process less painful. The \verb+refs.bib+ file used in this template is one such example.
+I strongly recommend that you use BIB\TeX\ to generate your bibliography automatically.  It makes managing your references much more effortless.  It is an excellent way to organize your references and reuse them.  You can use one set of entries for your references and cite them in your thesis, papers, and reports.  If you have not used it anytime before, please invest some time learning how to use it. Also, you can use reference managers like Mendeley, Zotero, EndNote, etc., to import this bib-formatted library with all your references. It makes the citation process less painful. The \verb+refs.bib+ file used in this template is one such example.
 
 I have included a simple example BIB\TeX\ file along in this directory called \verb+refs.bib+.  The \verb+iitmdiss.cls+ class package used in this thesis and for the synopsis adopts the \verb+natbib+ package to format the references with a customized bibliography style. It is provided as the \verb+iitm.bst+ file in the directory containing \verb+thesis.tex+.  Documentation for the \verb+natbib+ package should be available in your distribution of \LaTeX.  To cite the author along with the author name and year, use \verb+\cite{key}+ where \verb+key+ is the citation key for your bibliography entry.  You can also use \verb+\citet{key}+ to get the same effect.  To make the citation without the author name in the main text but inside the parenthesis, use \verb+\citep{key}+.  The following paragraph shows how citations can be used in text effectively.
 
 More information on BIB\TeX\ is available in the book by \cite{lamport:86}, which is a citation for the book. \cite{lamport1:86} is the same book citation in the old format where the year comes at the end. Now to cite the references within parentheses. There are many references~\citep{lamport:86} that explain how to use BIB\TeX.  Read the \verb+natbib+ package documentation for more details on how to cite things differently.
+
+\subsection{Sample Citations}
 
 Here are other references, for example.  The present study has been carried out in OpenFOAM, which is based on \cite{Weller1998}. The Lagrangian solver has two injection models based on the nature of the injection source, viz. \texttt{pointInjection} model, which injects the spray at a given point, and \texttt{detailedSprayProfileInj- ection} model, which injects the spray over a spherical sector of a given injection radius. The configuration and experimental data to compare the spray statistics is taken from \cite{Zhou2015a}
 
