@@ -238,7 +238,7 @@ nohead,includefoot,footskip=0.67in]{geometry}[2019/09/20]
 	%\vskip 2ex
 	\hskip 4ex 
 	\copyright \hskip 0.3ex 
-	2021 Indian Institute of Technology Madras
+	\the\year{} Indian Institute of Technology Madras
 }}
 
 \if@Synopsis

@@ -50,9 +50,16 @@
 \usepackage{listings}
 
 \usepackage{titletoc}
-%% Optional packages for nomencl, lineno and TOC links for every page
-%\usepackage{nomencl,lineno}
-%\usepackage{blindtext,eso-pic,ifthen,xcolor} % For TOC link in every page%%% The following lines add Chapter or Appendix in front of the number
+
+%% For making sections alone in Uppercase font
+\usepackage{titlesec}
+%\titleformat{\section} {<Font properties>}{\thesection}{<Spacing>}{\MakeUppercase}
+\titleformat{\section}
+   {\normalfont \normalsize \bfseries}{\thesection}{1em}{\MakeUppercase}
+\titleformat{\subsection}
+   {\normalfont \normalsize \bfseries}{\thesubsection}{1em}{}
+
+%% The following lines add Chapter or Appendix in front of the number
 \titlecontents{chapter}%
 [0pt]% <left>
 {\vspace{4pt}}% <above-code>
