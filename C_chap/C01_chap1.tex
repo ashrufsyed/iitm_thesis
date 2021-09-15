@@ -90,7 +90,7 @@ This sample file uses the \verb+hyperref+ package that makes all labels and refe
 
 The color boxes that appear on the hyperlinks are visible only in the Tex environment or if you're using a Linux system. If you try to open it in PDF applications on Windows like Adobe Reader, those color boxes won't show up. Nonetheless, if you want just the hyperlinks without those boxes, you can edit the \verb+01_packages.tex+ file from the \verb+0_settings+ folder. Search for the line with the \verb+hypertex+ package, and add the \verb+hidelinks+ option. So the line would become: \verb+\usepackage[breaklinks,hidelinks]{hyperref}+.
 
-\section{Example Figures and Tables}
+\section{Example Figure, Table and Equation}
 
 \subsection{Sample Figure and Sub-figure}
 Figure~\ref{fig:iitm} shows a simple figure with sub-figures and sub-captions for illustration along with a long caption using \verb+subcaption+ package.  A sample commented code using \verb|resizebox| has also been given if you prefer to use that instead. Either way, the formatting of caption text is automatically single-spaced and indented.
@@ -135,7 +135,7 @@ Figure~\ref{fig:iitm} shows a simple figure with sub-figures and sub-captions fo
 
 In the new format, emphasis has been made on the proper copyright compliance when reusing figures/images/tables from other authors and sources. Appropriate attributions and usage policies have to be included within the thesis certificate page. An example has been provided for using the IIT Madras logo as a sample figure in the present template.
 
-\subsection{Sample Table}
+\subsection{Sample Table and Equation}
 
 Table~\ref{tab:sample} shows a sample table with the caption placed correctly. The caption for this should always be placed before the table, as shown in the example. Like figure captions, the text is automatically single-spaced and indented.
 
@@ -156,6 +156,30 @@ Table~\ref{tab:sample} shows a sample table with the caption placed correctly. T
   \label{tab:sample}
   \end{center}
 \end{table}
+
+The following is an illustration of mathematical equations with proper indexing viz. one that fits a line:
+
+\begin{equation}
+\label{massEqn}
+\frac{\partial \overline{\rho}}{\partial t} + \frac{\partial (\overline{\rho} \Tilde{u}_j)}{\partial x_j} = 0
+\end{equation}
+
+And another which is long and split into two lines: 
+
+\begin{equation}
+\label{momEqn}
+\begin{gathered}[b]
+\frac{\partial(\overline{\rho} \Tilde{u}_i)}{\partial t} + \frac{\partial (\rho \Tilde{u}_i \Tilde{u}_j)} {\partial x_j}
+= -\frac{\partial \overline{p}}{\partial x_i} + \\
+\frac{\partial}{\partial x_j} \left( \overline{\rho}(\nu+\nu_{sgs}) \left( \frac{\partial\Tilde{u}_i}{ x_j} + \frac{\partial\Tilde{u}_j}{\partial x_i} - \frac{2}{3}\frac{\partial\Tilde{u}_k}{\partial x_k}\delta_{ij} \right) \right) + \overline{\rho} g_i
+\end{gathered}
+\end{equation}
+
+\subsubsection{Note on Equation and Symbol fonts}
+The type of fonts used in Math equations and symbols is a dividing issue among researchers. Some prefer to use curvy font of Times (like I have used \textit{AMS} fonts with the main \textit{Times} font package) or an altogether different font (like \textit{Computer Modern} which is default for \LaTeX). Another way would be to strictly use Times font with few modifications (using \texttt{mathptmx} or \texttt{newtxmath} packages). 
+
+It a matter of personal preference to choose either of these options, and you can use it after discussing with your advisor and/or committee. All these packages and options are commented in the \verb+01_packages.tex+ file from the \verb+0_settings+ folder.
+
 
 \section{Bibliography with BIB\TeX}
 

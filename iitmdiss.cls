@@ -330,19 +330,21 @@ nohead,includefoot,footskip=0.67in]{geometry}[2019/09/20]
 	}
 
    % Use the nomencl package for the NOTATION section.
-
+\RequirePackage{anyfontsize} %% To adjust chapter headings to 15pt size
    % Makes the chapter heading for main chapters/appendices
    \def\@makechapterhead#1{%
      {\parindent \z@ \raggedright \normalfont
        \ifnum \c@secnumdepth >\m@ne
        \begin{center}
-         \Large\bfseries \@chapapp\space \thechapter
+         \fontsize{15pt}{18}\selectfont \bfseries \@chapapp\space \thechapter
+         % \Large \bfseries \@chapapp\space \thechapter %% old size
        \end{center}
        \par\nobreak
        \vspace*{-0.7cm} % \vskip 20\p@  %% Sp
        \fi
        \interlinepenalty\@M
-       \Large \bf
+       \fontsize{15pt}{18}\selectfont \bf
+       % \Large \bf %% old size
        \begin{center}
          #1\par\nobreak      
        \end{center}
@@ -356,7 +358,8 @@ nohead,includefoot,footskip=0.67in]{geometry}[2019/09/20]
      {\parindent \z@ \raggedright
        \normalfont
        \interlinepenalty\@M
-       \Large \bfseries #1\par\nobreak
+       \fontsize{15pt}{18}\selectfont \bfseries #1\par\nobreak
+       % \Large \bfseries #1\par\nobreak %% old size
        \vskip 30\p@ %20\p@
        %\vspace*{-0.7cm}
      }}

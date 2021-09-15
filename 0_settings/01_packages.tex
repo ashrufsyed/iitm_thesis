@@ -1,12 +1,15 @@
 %% Font families
 \usepackage{times}
+%\usepackage{mathptmx} % TO replace basic 'Times' font with 'Adobe Times' in both text and math. Comment 'times' package while using this
 %\usepackage[scaled]{helvet} % For using helvetica with pdftex
 %\renewcommand\familydefault{\sfdefault}
 %\usepackage{t1enc} % t1enc is obselete, replaced by fontenc
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsthm,textcomp} % easier math formulae, align, subequations \ldots
-%\usepackage{newtxtext,newtxmath} % can be used for getting TNR font but might mess up your other co-existing fonts/symbols
+%\usepackage{newtxtext,newtxmath} % can be used for getting TNR font for math and text. Comment 'times' package while using this. Not compatible with 'textcomp' package and might mess up your other co-existing fonts/symbols
+
+
 \usepackage{afterpage}
 \usepackage{emptypage} % To remove page numbers on blank pages
 \usepackage{authoraftertitle} %to access title and author even after maketitle using \MyTitle and \MyAuthor
@@ -34,7 +37,7 @@
 %\usepackage{doi}
 \captionsetup[subfigure]{aboveskip=1pt,belowskip=1pt}
 \sisetup{detect-weight=true, detect-family=true, mode=text}
-\mhchemoptions{version=4}
+%\mhchemoptions{version=4}
 
 \usepackage[hyphens]{url} % to break urls at hyphens
 \usepackage[breaklinks]{hyperref} % hyperlinks for references.
@@ -58,6 +61,7 @@
    {\normalfont \normalsize \bfseries}{\thesection}{1em}{\MakeUppercase}
 \titleformat{\subsection}
    {\normalfont \normalsize \bfseries}{\thesubsection}{1em}{}
+
 
 %% The following lines add Chapter or Appendix in front of the number
 \titlecontents{chapter}%
