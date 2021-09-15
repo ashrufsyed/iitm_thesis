@@ -1,10 +1,11 @@
-# A New and Improved LaTeX class for Synopsis and Dissertations submitted to IIT Madras
+# A New and Improved LaTeX class for Synopsis and Dissertations submitted to IIT Madras (Sep 2021)
 
-- Modified the templates and files in compliance with [Feb-2021 Formatting guidelines of IIT Madras](FormatsGuidelinesProformas/RevisedFormatsGuidelines_ThesisSynopsis.pdf).
+- Modified the templates and files in compliance with [Feb-2021 Formatting guidelines of IIT Madras](FormatsGuidelinesProformas/RevisedFormatsGuidelines_ThesisSynopsis.pdf), and later with updated guidelines of Jul 2021.
+- The document `thesis.pdf` (or `chapter.pdf`) serves as a user guide for the template, so please go through it before using the template.
 - This is a LaTeX2e system with a `iitmdiss.cls` file and various templates 
 ([`thesis.tex`](thesis.tex), [`synopsis.tex`](synopsis.tex) and [`chapter.tex`](chapter.tex)) that should format a report as per these guidelines.  
 - The page layout is set using the `geometry` package.  
-- The double/singlespacing is setup using `setspace`.
+- The double/singlespacing is setup using `setspace` ctan package.
 - Figure captions are set using the `subcaption` or `caption2` packages depending on the presence of subfigures.
 - `natbib` is used to do the citation using an author-year format. I've made an `iitm.bst` file that formats the references as per the IITM guidelines.
 - Additional proformas required during preparation and submission are given in a combined word file named ['ProformasCertificates_New.docx'](FormatsGuidelinesProformas/ProformasCertificates_New.docx)
@@ -60,6 +61,13 @@ Department of Aerospace Engineering
 IIT Madras, Chennai 600036, India  
 <ashrufsyed@smail.iitm.ac.in> || <ashrufsyed@gmail.com>  
 Copyright (C) 2019-2021 Ashruf Syed
+
+## New Features added in Sep 2021 version:
+- added sample equations with indexing (along with different Times font options to use with math equations/symbols)
+- corrected bugs related to line spacing (along with a small explainer on doublespacing standard)
+- corrected font size of chapter names to 15pt (as given in the guidelines)
+- moved `setspace.sty` to `Obsolete` folder as it is available as native ctan package
+- added detailed user guide in the form of `thesis.pdf` or `chapter.pdf`
 
 ## New Features added in Aug 2021 version:
 - compliance with the revised guidelines of Jul 2021
