@@ -1,13 +1,13 @@
 # A New and Improved LaTeX class for Synopsis and Dissertations submitted to IIT Madras (Sep 2021)
 
 - Modified the templates and files in compliance with [Feb-2021 Formatting guidelines of IIT Madras](FormatsGuidelinesProformas/RevisedFormatsGuidelines_ThesisSynopsis.pdf), and later with updated guidelines of Jul 2021.
-- The document `thesis.pdf` (or `chapter.pdf`) serves as a user guide for the template, so please go through it before using the template.
-- This is a LaTeX2e system with a `iitmdiss.cls` file and various templates 
+- The document [`thesis.pdf`](thesis.pdf) (or [`chapter.pdf`](chapter.pdf)) serves as a user guide for the template, so please go through it before using the template.
+- This is a LaTeX2e system with a [`iitmdiss.cls`](iitmdiss.cls) file and various templates 
 ([`thesis.tex`](thesis.tex), [`synopsis.tex`](synopsis.tex) and [`chapter.tex`](chapter.tex)) that should format a report as per these guidelines.  
 - The page layout is set using the `geometry` package.  
 - The double/singlespacing is setup using `setspace` ctan package.
 - Figure captions are set using the `subcaption` or `caption2` packages depending on the presence of subfigures.
-- `natbib` is used to do the citation using an author-year format. I've made an `iitm.bst` file that formats the references as per the IITM guidelines.
+- `natbib` is used to do the citation using an author-year format. I've made an [`iitm.bst`](iitm.bst) file that formats the references as per the IITM guidelines.
 - Additional proformas required during preparation and submission are given in a combined word file named ['ProformasCertificates_New.docx'](FormatsGuidelinesProformas/ProformasCertificates_New.docx)
 - Previous guidelines, forms, templates and files are archived into [oldGuidelines folder](FormatsGuidelinesProformas/oldGuidelines)
 
@@ -54,7 +54,7 @@ To use this class do the following:
 Prabhu Ramachandran <prabhu@ae.iitm.ac.in>  
 March 2005
 
-### New Features contributed by:  
+### New Features and Improvements contributed by:  
 Ashruf Syed  
 Doctoral Student  
 Department of Aerospace Engineering  
@@ -66,8 +66,8 @@ Copyright (C) 2019-2021 Ashruf Syed
 - added sample equations with indexing (along with different Times font options to use with math equations/symbols)
 - corrected bugs related to line spacing (along with a small explainer on doublespacing standard)
 - corrected font size of chapter names to 15pt (as given in the guidelines)
-- moved `setspace.sty` to `Obsolete` folder as it is available as native ctan package
-- added detailed user guide in the form of `thesis.pdf` or `chapter.pdf`
+- moved `setspace.sty` to [`Obsolete`](Obsolete) folder as it is available as a native ctan package
+- added detailed user guide in the form of [`thesis.pdf`](thesis.pdf) (or [`chapter.pdf`](chapter.pdf))
 
 ## New Features added in Aug 2021 version:
 - compliance with the revised guidelines of Jul 2021
@@ -83,7 +83,7 @@ Copyright (C) 2019-2021 Ashruf Syed
 - added Dual Degree option for project report 
        	(can be edited to use it for any course based degree like M.Sc., M.A., M.B.A)
 - added the option `PrntForm` to produce thesis with the necessary blank pages for printing
-- added `clean.sh` bash file (works with Linux systems which uses bash) to clean the latex files for a fresh compilation
+- added [`clean.sh`](clean.sh) bash file (works with Linux systems which uses bash) to clean the latex files for a fresh compilation
 - separation of main tex file from its chapter/sections (using `\include{file}` option) along with proper grouping and labeling of files for easier sorting and debugging
        	(A01_title, B01_abstract, C01_chap1, D01_app1 etc.)
 - added sample pages for quotations, dedication, glossary, abbreviations and notation
@@ -94,7 +94,7 @@ Copyright (C) 2019-2021 Ashruf Syed
 - added the sample CV and Committee pages at the end
 - added opensource licensing to the file for unambiguity in free usage and distribution
 - moved packages, commands, preamble and postamble of the thesis to 0_settings folder for simpler look
-- fixed various bugs in iitm.bst and added doi/arxiv link support for references
+- fixed various bugs in [`iitm.bst`](iitm.bst) and added doi/arxiv link support for references
 
 
 ## Licensing
@@ -104,7 +104,7 @@ Copyright (C) 2019-2021 Ashruf Syed
  Also the templates and files are provided “as is”, and there is no guarantee of any kind.
 
 
-Ashruf Syed <ashrufsyed@gmail.com>
+Ashruf Syed <ashrufsyed@gmail.com> || <ashrufsyed@smail.iitm.ac.in>
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
