@@ -183,6 +183,8 @@ nohead,includefoot,footskip=0.67in]{geometry}[2019/09/20]
 
 \RequirePackage{atbeginend} % used to redefine the list environs
 \setstretch{1.5}
+%\doublespacing  % For double spacing
+%\setstretch{2} % Alternate double-spacing
 
 \BeforeBegin{itemize}{\vspace*{-5ex}\begin{singlespace}}
 \AfterEnd{itemize}{\end{singlespace}}

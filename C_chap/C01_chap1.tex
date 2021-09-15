@@ -81,9 +81,12 @@ For synopsis, the concept of 'Blue' or 'Yellow' tape to represent the draft and 
 Like the thesis, there is a 'NoColor' option for the synopsis, but it will not be that useful. Also, the default option gives a black color bar.
 
 \subsubsection{Line Spacing and Indentation}
-All the text formating is based on the institute guidelines with double spacing (except for pointers, footnote or endnote) and no indentation of paragraphs. So please do not modify them to make your paragraphs small or large. 
+All the text formating is based on the institute guidelines with double spacing (except for pointers, footnote or endnote) and no indentation of paragraphs. So please do not modify them to make your paragraphs small or large.
 
 Suppose you want to modify the spacing between the lines/text of the title page (and inside cover page) which is sometimes needed, and if you are familiar with \LaTeX, you can modify it by editing the \verb+titlePage.tex+ file in the main folder. Most of time it requires some minor fine-tuning.
+
+\textbf{Note:} As for the double spacing, there is no universal standard, and each has their own definition. For example, the Microsoft Word standard is different from certain Universities which follow their own standard defined in their respective templates. Even within \LaTeX, there are two major standards, one which is \verb+\doublespacing+ option (which has been used in this template), and the other \verb+\setstretch{2}+ option (activated from using \texttt{setspace} package). Our institute does not specify a particular definition as of now, so it is left to the user's preference. In case if you do want to switch to \verb+\setstretch{2}+ option, you can do it in the \verb+thesis.tex+ or \verb+chapter.tex+ file(s). You might need to adjust certain pages including the certificate to accommodate the spacing correctly.
+
 
 \subsubsection{Hyperlinks and Color boxes}
 This sample file uses the \verb+hyperref+ package that makes all labels and references clickable in both the generated DVI and PDF files.  These are very useful when reading the document online and do not affect the output when the files are printed.
